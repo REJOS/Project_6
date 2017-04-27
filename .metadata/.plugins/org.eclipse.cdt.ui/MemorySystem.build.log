@@ -1,0 +1,6 @@
+16:09:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+
+16:10:00 Build Finished (took 111ms)
+
