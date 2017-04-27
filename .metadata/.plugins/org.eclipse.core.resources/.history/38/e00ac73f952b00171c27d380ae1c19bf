@@ -25,7 +25,7 @@ int main() {
 	int i = 0;
 	int num_addr;
 	int result;
-
+	printf("hi");
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 

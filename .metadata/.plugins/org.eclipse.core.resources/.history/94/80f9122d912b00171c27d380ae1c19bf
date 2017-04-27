@@ -39,7 +39,7 @@ int main() {
 		last_addr = strtok(buffer, delimiters);
 		while (last_addr != NULL) {
 			logic_addr[i] = atoi(last_addr);
-			//printf("", )
+			printf("", )
 			last_addr = strtok(NULL, delimiters);
 			i++;
 		}

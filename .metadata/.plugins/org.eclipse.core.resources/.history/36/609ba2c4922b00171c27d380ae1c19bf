@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = memorysystem.h
+OBJ = memorysystem.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS)

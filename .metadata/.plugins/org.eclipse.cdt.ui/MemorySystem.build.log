@@ -1,6 +1,11 @@
-16:09:59 **** Incremental Build of configuration Default for project MemorySystem ****
+17:02:33 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
-make: Nothing to be done for `all'.
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, u_int_t*)’:
+memorysystem.cpp:96:15: warning: converting ‘false’ to pointer type ‘bool*’ [-Wconversion-null]
+   is_page_hit = false;
+               ^
+g++ -g -o Debug/MemorySystem memorysystem.o
 
-16:10:00 Build Finished (took 111ms)
+17:02:34 Build Finished (took 349ms)
 

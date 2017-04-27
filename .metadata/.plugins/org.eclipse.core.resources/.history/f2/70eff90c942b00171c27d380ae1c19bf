@@ -1,0 +1,8 @@
+makfile:
+all: memorysystem
+
+memorysystem: memorysystem.o
+	g++ -g -o memorysystem memorysystem.o
+	
+memorysystem.o: memorysystem.cpp memorysystem.h
+	g++ -c -g memorysystem.cpp
