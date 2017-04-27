@@ -1,0 +1,24 @@
+/*
+ * MemorySystem.c
+ *
+ *  Created on: Apr 17, 2017
+ *      Author: john
+ */
+
+//#include <iostream>
+#include "memorysystem.h"
+
+int main() {
+
+
+
+	return 0;
+}
+
+int ParsePageNum(int logical_addr) {
+	return (logical_addr | 0b11111111000000000000000000000000) >> 24;
+}
+
+int ParseOffset(int logical_addr) {
+	return (logical_addr | 0b00000000111111110000000000000000) >> 24;
+}

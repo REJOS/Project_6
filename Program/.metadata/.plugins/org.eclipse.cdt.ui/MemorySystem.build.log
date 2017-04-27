@@ -1,0 +1,25 @@
+12:07:33 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp:52:29: warning: ‘page_table’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  CreatePageTable(page_table);
+                             ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+
+12:07:33 Build Finished (took 368ms)
+

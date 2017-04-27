@@ -1,0 +1,27 @@
+/*
+ * MemorySystem.c
+ *
+ *  Created on: Apr 17, 2017
+ *      Author: john
+ */
+
+#include <iostream>
+#include "memorysystem.h"
+
+int main() {
+
+
+
+	return 0;
+}
+
+
+
+
+int ParsePageNum(int logical_addr) {
+	return (logical_addr | PAGE_MASK) >> PAGE_SHIFT;
+}
+
+int ParseOffset(int logical_addr) {
+	return (logical_addr | OFFSET_MASK);
+}

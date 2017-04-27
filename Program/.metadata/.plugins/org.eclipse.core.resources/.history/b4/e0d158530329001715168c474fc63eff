@@ -1,0 +1,29 @@
+/*
+ * memorysystem.h
+ *
+ *  Created on: Apr 17, 2017
+ *      Author: john
+ */
+
+#ifndef MEMORYSYSTEM_H_
+#define MEMORYSYSTEM_H_
+
+#define TLB_SIZE 16
+
+typedef unsigned short u_short;
+
+struct TLB_node {
+	u_short t_page;
+	u_short t_age;
+};
+
+struct TLB_table {
+	TLB_node table[TLB_SIZE];
+	u_short size;
+};
+
+int ParsePageNum(int logical_addr);
+int ParseOffset(int logical_addr);
+
+
+#endif /* MEMORYSYSTEM_H_ */

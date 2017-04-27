@@ -1,0 +1,809 @@
+10:59:45 **** Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:9:26: fatal error: memorysystem.h: No such file or directory
+ #include <memorysystem.h>
+                          ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:00:01 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:9:26: fatal error: memorysystem.h: No such file or directory
+ #include <memorysystem.h>
+                          ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:00:08 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:9:24: fatal error: memorysystem: No such file or directory
+ #include <memorysystem>
+                        ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:00:31 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+Finished building: ../memorysystem.c
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o   
+Finished building target: MemorySystem
+ 
+11:00:36 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+11:00:43 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+11:01:00 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+11:09:31 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+Finished building: ../memorysystem.c
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o   
+Finished building target: MemorySystem
+ 
+11:09:47 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:8:20: fatal error: iostream: No such file or directory
+ #include <iostream>
+                    ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:15:09 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:8:20: fatal error: iostream: No such file or directory
+ #include <iostream>
+                    ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:16:01 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:8:20: fatal error: iostream: No such file or directory
+ #include <iostream>
+                    ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:16:07 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:8:20: fatal error: iostream: No such file or directory
+ #include <iostream>
+                    ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:16:09 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.c"
+../memorysystem.c:8:19: fatal error: istream: No such file or directory
+ #include <istream>
+                   ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+11:19:11 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o   
+Finished building target: MemorySystem
+ 
+12:15:24 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp:9:17: fatal error: stdio: No such file or directory
+ #include <stdio>
+                 ^
+compilation terminated.
+make: *** [memorysystem.o] Error 1
+12:15:51 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o   
+Finished building target: MemorySystem
+ 
+12:37:07 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o   
+Finished building target: MemorySystem
+ 
+12:53:40 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../pagetable.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"pagetable.d" -MT"pagetable.o" -o "pagetable.o" "../pagetable.cpp"
+../pagetable.cpp:13:23: error: expected ‘,’ or ‘...’ before ‘filename’
+  int OpenTable(char[] filename);
+                       ^
+make: *** [pagetable.o] Error 1
+12:56:44 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building file: ../pagetable.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"pagetable.d" -MT"pagetable.o" -o "pagetable.o" "../pagetable.cpp"
+Finished building: ../pagetable.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+20:17:18 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:13:13: error: ‘printf’ was not declared in this scope
+  printf("hi");
+             ^
+make: *** [memorysystem.o] Error 1
+20:27:58 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+20:51:06 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+20:52:53 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+21:49:10 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:29:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘int*’ [-Wformat=]
+  printf("%d", num);
+                  ^
+../memorysystem.cpp:25:26: warning: ‘num’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  fscanf(input, "%d", num);
+                          ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+21:54:29 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:32: error: invalid conversion from ‘void*’ to ‘int*’ [-fpermissive]
+  int * num = malloc(sizeof(int));
+                                ^
+../memorysystem.cpp:30:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘int*’ [-Wformat=]
+  printf("%d", num);
+                  ^
+make: *** [memorysystem.o] Error 1
+21:54:58 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:38: error: cast from ‘void*’ to ‘int’ loses precision [-fpermissive]
+  int * num = (int) malloc(sizeof(int));
+                                      ^
+../memorysystem.cpp:24:38: error: invalid conversion from ‘int’ to ‘int*’ [-fpermissive]
+../memorysystem.cpp:30:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘int*’ [-Wformat=]
+  printf("%d", num);
+                  ^
+make: *** [memorysystem.o] Error 1
+21:55:24 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:30:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘int*’ [-Wformat=]
+  printf("%d", num);
+                  ^
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+21:55:44 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+21:58:09 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+21:58:29 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:16:26 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:16:39 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:16:47 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:20:17 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:8: warning: unused variable ‘to_int’ [-Wunused-variable]
+    int to_int = atoi(last_token);
+        ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:21:04 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:21:22 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:23:19 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:8: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+    int i;
+        ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:26:20 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:8: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+    int i;
+        ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:26:30 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:40:17: error: ‘to_int’ was not declared in this scope
+    printf("%d", to_int);
+                 ^
+make: *** [memorysystem.o] Error 1
+22:26:44 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:33:18 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:33:28 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:37:10 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:8: warning: unused variable ‘i’ [-Wunused-variable]
+    int i;
+        ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:37:36 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:37:41 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:37:54 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:38:25 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:41:18 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:39:31: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    sscanf(last_token, "%d", i);
+                               ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:41:23 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+22:41:33 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:40:19: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    printf("%d", *i);
+                   ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:42:57 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:43:38 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:39:30: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘int’ [-Wformat=]
+    sscanf(last_token, "%d", i);
+                              ^
+../memorysystem.cpp:39:31: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    sscanf(last_token, "%d", i);
+                               ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:44:29 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:39:31: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    sscanf(last_token, "%d", i);
+                               ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:46:15 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:47:34 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:50:58 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+22:55:40 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+make: Nothing to be done for `all'.
+11:15:56 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:39:15: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+    last_token = "123";
+               ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:17:43 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:18:13 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:19: warning: statement has no effect [-Wunused-value]
+    atoi(last_token);
+                   ^
+../memorysystem.cpp:39:19: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    printf("%d", i);
+                   ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:18:59 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:38:19: warning: statement has no effect [-Wunused-value]
+    atoi(last_token);
+                   ^
+../memorysystem.cpp:39:19: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    printf("%d", *i);
+                   ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:19:56 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:20:18 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:30:30 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:25:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:27:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+11:52:43 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp: In function ‘int CreatePageTable(page_table_t*)’:
+../memorysystem.cpp:69:42: error: invalid conversion from ‘void*’ to ‘page_table_t*’ [-fpermissive]
+  page_table = malloc(sizeof(page_table_t));
+                                          ^
+../memorysystem.cpp:77:23: error: no match for ‘operator=’ (operand types are ‘page_t’ and ‘long int’)
+   page_table->list[i] = NULL;
+                       ^
+../memorysystem.cpp:77:23: note: candidate is:
+In file included from ../memorysystem.cpp:11:0:
+../memorysystem.h:36:3: note: page_t& page_t::operator=(const page_t&)
+ } page_t;
+   ^
+../memorysystem.h:36:3: note:   no known conversion for argument 1 from ‘long int’ to ‘const page_t&’
+make: *** [memorysystem.o] Error 1
+11:54:10 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp: In function ‘int CreatePageTable(page_table_t*)’:
+../memorysystem.cpp:69:42: error: invalid conversion from ‘void*’ to ‘page_table_t*’ [-fpermissive]
+  page_table = malloc(sizeof(page_table_t));
+                                          ^
+make: *** [memorysystem.o] Error 1
+11:54:22 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp: In function ‘int CreatePageTable(page_table_t*)’:
+../memorysystem.cpp:69:42: error: invalid conversion from ‘void*’ to ‘page_table_t*’ [-fpermissive]
+  page_table = malloc(sizeof(page_table_t));
+                                          ^
+make: *** [memorysystem.o] Error 1
+11:55:20 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp:52:29: warning: ‘page_table’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  CreatePageTable(page_table);
+                             ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 
+12:07:33 **** Incremental Build of configuration Debug for project MemorySystem ****
+make all 
+Building file: ../memorysystem.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"memorysystem.d" -MT"memorysystem.o" -o "memorysystem.o" "../memorysystem.cpp"
+../memorysystem.cpp: In function ‘int main()’:
+../memorysystem.cpp:24:6: warning: variable ‘logic_addr’ set but not used [-Wunused-but-set-variable]
+  int logic_addr[MAX_ADDRESSES];
+      ^
+../memorysystem.cpp:26:6: warning: variable ‘num_addr’ set but not used [-Wunused-but-set-variable]
+  int num_addr;
+      ^
+../memorysystem.cpp:52:29: warning: ‘page_table’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  CreatePageTable(page_table);
+                             ^
+Finished building: ../memorysystem.cpp
+ 
+Building target: MemorySystem
+Invoking: GCC C++ Linker
+g++  -o "MemorySystem"  ./memorysystem.o ./pagetable.o   
+Finished building target: MemorySystem
+ 

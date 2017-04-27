@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MemorySystem/memorysystem.c&apos; to &apos;memorysystem.cpp&apos;" description="Rename resource &apos;memorysystem.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="memorysystem.c" name="memorysystem.cpp" stamp="1492445948365" updateReferences="true"/>
+</session>
