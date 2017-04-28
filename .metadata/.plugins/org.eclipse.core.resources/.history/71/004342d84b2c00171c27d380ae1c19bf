@@ -40,18 +40,18 @@ int main() {
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
-	// File is invalid
+        // File is invalid
 	if (input == NULL) {
 		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
-
-	// Valid file, read it in as long as buffer isn't full
+        
+        // Valid file, read it in as long as buffer isn't full
 	while (fgets(buffer, BUFFER_SIZE, input) != NULL) {
 
 		last_addr = strtok(buffer, delimiters);
 
-		// Populate array with logical address from file
+                // Populate array with logical address from file
 		while (last_addr != NULL) {
 			logic_addr[i] = atoi(last_addr);
 			//printf("%d", logic_adrr[i]);
@@ -63,14 +63,11 @@ int main() {
 	fclose(input); // Close the input file
 
 	tlb_t * tlb;
-	result = CreateTLB(tlb); // Create a TLB
-
-	if (tlb == NULL) {
-		return -1;
-	}
+<<<<<<< HEAD
+	result = CreateTLB(tlb);
 
 	page_table_t ** page_table;
-	page_table = (page_table_t **) malloc(sizeof(page_table_t *)); // Create a page table
+	page_table = (page_table_t **) malloc(sizeof(page_table_t *));
 
 	if (page_table == NULL) {
 		return -1;
@@ -78,13 +75,26 @@ int main() {
 
 	result = CreatePageTable(page_table);
 	if (result) {
+=======
+	result = CreateTLB(tlb); // Create a TLB
+                // NEEDS AN IF STATEMENT HERE
+	page_table_t * page_table;
+	result = CreatePageTable(page_table); // Create a page table
+
+         // result is an error code
+	if(result) {
+>>>>>>> cde2b07c94a996246aaf4c09a2af8dce21b7c130
 		printf("Error: Could not create page table.");
 		return -1;
 	}
 
-	// Obtain the page number and offset for each address,
-	// then search for them in the page table.
+<<<<<<< HEAD
 	for (i = 0; i < num_addr; i++) {
+=======
+         // Obtain the page number and offset for each address,
+         // then search for them in the page table.
+	for(i = 0; i < num_addr; i++) {
+>>>>>>> cde2b07c94a996246aaf4c09a2af8dce21b7c130
 		bool *hit = (bool *) malloc(sizeof(bool));
 		char ** frames = (char **) malloc(sizeof(char *));
 		u_int_t page_num = ParsePageNum(logic_addr[i]);
@@ -100,7 +110,7 @@ int main() {
 		}
 	}
 
-	printf("Works");
+        printf("Works");
 	return 0;
 }
 
@@ -111,7 +121,7 @@ int main() {
  * Description:
  */
 int CreateTLB(tlb_t *tlb) {
-	// Assign memory to the tlb
+        // Assign memory to the tlb
 	tlb = (tlb_t *) malloc(sizeof(tlb_t));
 
 	if (tlb == NULL) {
@@ -128,6 +138,15 @@ int CreateTLB(tlb_t *tlb) {
 	return 0;
 }
 
+<<<<<<< HEAD
+int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+	if (tlb->size > 0) {
+		for (int i = 0; i < tlb->size; i++) {
+			if (tlb->list[i]->page_num == page_num) {
+				*is_tlb_hit = true;
+				*frames = tlb->list[i]->frames;
+			}
+=======
 /*
  * Function: SearchTLB()
  * Parameters: u_int_t page_num
@@ -137,14 +156,14 @@ int CreateTLB(tlb_t *tlb) {
  * Return Type: int
  * Description:
  */
-int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
-
-	if (tlb->size > 0) {
-		for (int i = 0; i < tlb->size; i++) {
-			if (tlb->list[i]->page_num == page_num) {
-				*is_tlb_hit = true;
-				*frames = tlb->list[i]->frames;
-			}
+int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
+		char **frames) {
+	if(tlb->size>0){
+	for(int i = 0; i < tlb->size; i++){
+		if(tlb->list[i]->page_num == page_num){
+			*is_tlb_hit = true;
+			*frames = tlb->list[i]->frames;
+>>>>>>> cde2b07c94a996246aaf4c09a2af8dce21b7c130
 		}
 	}
 	*is_tlb_hit = false;
@@ -153,13 +172,17 @@ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
 	return 0;
 }
 
+<<<<<<< HEAD
+int CreatePageTable(page_table_t **page_table) {
+=======
 /*
  * Function: CreatePageTable()
  * Parameters: page_table_t *page_table
  * Return Type: int
  * Description:
  */
-int CreatePageTable(page_table_t **page_table) {
+int CreatePageTable(page_table_t *page_table) {
+>>>>>>> cde2b07c94a996246aaf4c09a2af8dce21b7c130
 
 	(*page_table) = (page_table_t *) malloc(sizeof(page_table_t));
 
@@ -180,17 +203,22 @@ int CreatePageTable(page_table_t **page_table) {
 	return 0;
 }
 
+<<<<<<< HEAD
+int SearchPageTable(u_int_t page_num, page_table_t * page_table,
+		bool *is_page_hit, char **frames) {
+=======
 /*
  * Function: SearchPageTable()
  * Parameters: u_int_t page_num
  *             page_table_t * page_table
- bool *is_page_hit
- char **frames
+               bool *is_page_hit
+               char **frames
  * Return Type: int
  * Description:
  */
-int SearchPageTable(u_int_t page_num, page_table_t * page_table,
-		bool *is_page_hit, char **frames) {
+int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit,
+		char **frames) {
+>>>>>>> cde2b07c94a996246aaf4c09a2af8dce21b7c130
 
 	if (page_table->list[page_num]->frames == NULL) {
 		*frames = NULL;
@@ -208,9 +236,9 @@ int SearchPageTable(u_int_t page_num, page_table_t * page_table,
 /*
  * Function: PageFaultHandler()
  * Parameters: u_int_t page_num
- const char * phys_mem_filename
- page_table_t *page_table
- tlb_t *tlb
+               const char * phys_mem_filename
+               page_table_t *page_table
+               tlb_t *tlb
  * Return Type: int
  * Description:
  */
@@ -241,6 +269,8 @@ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 	fread(new_page->frames, 1, 256, disk);
 
 	fclose(disk);
+
+
 
 	return 0;
 }

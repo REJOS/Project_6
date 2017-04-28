@@ -980,3 +980,29 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+14:50:35 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchTLB(u_int_t, tlb_t*, bool*, char**)’:
+memorysystem.cpp:161:48: error: a function-definition is not allowed here before ‘{’ token
+ int CreatePageTable(page_table_t **page_table) {
+                                                ^
+memorysystem.cpp:270:1: error: expected ‘}’ at end of input
+ }
+ ^
+make: *** [memorysystem.o] Error 1
+14:51:54 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchTLB(u_int_t, tlb_t*, bool*, char**)’:
+memorysystem.cpp:161:48: error: a function-definition is not allowed here before ‘{’ token
+ int CreatePageTable(page_table_t **page_table) {
+                                                ^
+memorysystem.cpp:270:1: error: expected ‘}’ at end of input
+ }
+ ^
+make: *** [memorysystem.o] Error 1
+14:56:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
