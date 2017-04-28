@@ -118,6 +118,7 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 		if ((*physical_memory)->list[i] == NULL) {
 			return -1;
 		}
+		(*physical_memory)->list[i]->frames = NULL;
 	}
 
 	return 0;
@@ -188,7 +189,7 @@ int CreatePageTable(page_table_t **page_table) {
 
 	int i;
 	for (i = 0; i < NUM_PAGES; i++) {
-		(*page_table)->page_to_frame[i] = -1;
+		(*page_table)->list[i] = 0;
 	}
 
 	return 0;
@@ -203,16 +204,16 @@ int CreatePageTable(page_table_t **page_table) {
  * Return Type: int
  * Description:
  */
-int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
+int SearchPageTable(int page_num, int frame_num, page_table_t * page_table,
 		bool *is_page_hit) {
 
-	if (page_table->page_to_frame[page_num] == -1) {
-		*frame_num = -1;
+	if (page_table->page_to_frame[page_num] == 0) {
+		*frames = NULL;
 		*is_page_hit = false;
 		return 0;
 	}
 
-	*frame_num = page_table->page_to_frame[page_num];
+	*frames = page_table->page_to_frame[page_num];
 
 	*is_page_hit = true;
 

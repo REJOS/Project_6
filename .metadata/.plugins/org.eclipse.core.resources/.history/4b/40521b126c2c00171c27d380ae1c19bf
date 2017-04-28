@@ -46,7 +46,7 @@ int SearchTLB(int page_num, int frame_num, tlb_t *tlb, bool *is_tlb_hit);
 
 int CreatePageTable(page_table_t **page_table);
 int SearchPageTable(int page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
-int PageFaultHandler(int page_num, int frame_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb);
+int PageFaultHandler(int page_num, int frame_num const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb);
 
 int TLB_replacement_FIFO(int page_num, char **frame, tlb_t *tlb);
 int TLB_replacement_LRU(int page_num, char **frame, tlb_t *tlb);

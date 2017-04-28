@@ -1,7 +1,51 @@
-15:26:04 **** Incremental Build of configuration Default for project MemorySystem ****
+18:52:33 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
 g++ -c -g memorysystem.cpp
-g++ -g -o Debug/MemorySystem memorysystem.o
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:99:68: error: invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp:99:68: error: cannot convert ‘page_table_t*’ to ‘const char*’ for argument ‘3’ to ‘int PageFaultHandler(int, int, const char*, page_table_t*, tlb_t*)’
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:165:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:165:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:170:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, const char*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:234:2: error: ‘page_t’ was not declared in this scope
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+  ^
+memorysystem.cpp:234:11: error: ‘new_page’ was not declared in this scope
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+           ^
+memorysystem.cpp:234:31: error: expected primary-expression before ‘)’ token
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+                               ^
+memorysystem.cpp:234:33: error: expected ‘;’ before ‘malloc’
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+                                 ^
+memorysystem.cpp:259:14: error: ‘struct page_table_t’ has no member named ‘list’
+  page_table->list[page_num] = new_page;
+              ^
+memorysystem.cpp:261:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:261:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
 
-15:26:04 Build Finished (took 254ms)
+18:52:33 Build Finished (took 246ms)
 

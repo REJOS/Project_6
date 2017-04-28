@@ -30,26 +30,29 @@ typedef struct {
 } tlb_t;
 
 typedef struct {
+	char * frames;
+} page_t;
+
+typedef struct {
 	int page_to_frame[NUM_PAGES];
-	int size;
 } page_table_t;
 
 typedef struct {
 	char * frame[NUM_PAGES];
 } physical_memory_t;
 
-int ParsePageNum(int logical_addr);
-int ParseOffset(int logical_addr);
+int ParsePageNum(u_int_t logical_addr);
+int ParseOffset(u_int_t logical_addr);
 
 int CreateTLB(tlb_t **tlb);
-int SearchTLB(int page_num, int frame_num, tlb_t *tlb, bool *is_tlb_hit);
+int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
 
 int CreatePageTable(page_table_t **page_table);
-int SearchPageTable(int page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
-int PageFaultHandler(int page_num, int frame_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb);
+int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
 
-int TLB_replacement_FIFO(int page_num, char **frame, tlb_t *tlb);
-int TLB_replacement_LRU(int page_num, char **frame, tlb_t *tlb);
+int TLB_replacement_FIFO(page_t page_num, char **frame, tlb_t *tlb);
+int TLB_replacement_LRU(page_t page_num, char **frame, tlb_t *tlb);
 
 
 #endif /* MEMORYSYSTEM_H_ */

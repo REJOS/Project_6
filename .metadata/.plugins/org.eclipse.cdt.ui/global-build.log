@@ -1120,3 +1120,683 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+17:17:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:44:18: error: ‘u_int_t’ was not declared in this scope
+ int ParsePageNum(u_int_t logical_addr);
+                  ^
+memorysystem.h:45:17: error: ‘u_int_t’ was not declared in this scope
+ int ParseOffset(u_int_t logical_addr);
+                 ^
+memorysystem.h:48:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+               ^
+memorysystem.h:48:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                       ^
+memorysystem.h:48:40: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                        ^
+memorysystem.h:48:45: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                             ^
+memorysystem.h:48:63: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                               ^
+memorysystem.h:48:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                                            ^
+memorysystem.h:51:21: error: ‘u_int_t’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                     ^
+memorysystem.h:51:52: error: expected primary-expression before ‘*’ token
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                    ^
+memorysystem.h:51:54: error: ‘page_table’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                      ^
+memorysystem.h:51:66: error: expected primary-expression before ‘bool’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                  ^
+memorysystem.h:51:85: error: expected primary-expression before ‘char’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                     ^
+memorysystem.h:51:98: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                                  ^
+memorysystem.h:52:22: error: ‘u_int_t’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                      ^
+memorysystem.h:52:40: error: expected primary-expression before ‘const’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                        ^
+memorysystem.h:52:85: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                     ^
+memorysystem.h:52:86: error: ‘page_table’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                      ^
+memorysystem.h:52:104: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                        ^
+memorysystem.h:52:105: error: ‘tlb’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                         ^
+memorysystem.h:52:110: error: expected primary-expression before ‘char’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                              ^
+memorysystem.h:52:124: error: expression list treated as compound expression in initializer [-fpermissive]
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                                            ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:37:2: error: ‘u_int_t’ was not declared in this scope
+  u_int_t logic_addr[MAX_ADDRESSES];
+  ^
+memorysystem.cpp:37:10: error: expected ‘;’ before ‘logic_addr’
+  u_int_t logic_addr[MAX_ADDRESSES];
+          ^
+memorysystem.cpp:57:4: error: ‘logic_addr’ was not declared in this scope
+    logic_addr[i] = atoi(last_addr);
+    ^
+memorysystem.cpp:91:11: error: expected ‘;’ before ‘page_num’
+   u_int_t page_num = ParsePageNum(logic_addr[i]);
+           ^
+memorysystem.cpp:92:11: error: expected ‘;’ before ‘offset’
+   u_int_t offset = ParseOffset(logic_addr[i]);
+           ^
+memorysystem.cpp:96:20: error: ‘page_num’ was not declared in this scope
+    SearchPageTable(page_num, *page_table, hit, frames);
+                    ^
+memorysystem.cpp:96:54: error: ‘SearchPageTable’ cannot be used as a function
+    SearchPageTable(page_num, *page_table, hit, frames);
+                                                      ^
+memorysystem.cpp:99:68: error: ‘PageFaultHandler’ cannot be used as a function
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:160:15: error: redefinition of ‘int SearchTLB’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:48:5: error: ‘int SearchTLB’ previously defined here
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+     ^
+memorysystem.cpp:160:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+memorysystem.cpp:160:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                       ^
+memorysystem.cpp:160:41: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                         ^
+memorysystem.cpp:160:46: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                              ^
+memorysystem.cpp:160:64: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                                                ^
+make: *** [memorysystem.o] Error 1
+17:19:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:44:18: error: ‘u_int_t’ was not declared in this scope
+ int ParsePageNum(u_int_t logical_addr);
+                  ^
+memorysystem.h:45:17: error: ‘u_int_t’ was not declared in this scope
+ int ParseOffset(u_int_t logical_addr);
+                 ^
+memorysystem.h:48:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+               ^
+memorysystem.h:48:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                       ^
+memorysystem.h:48:40: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                        ^
+memorysystem.h:48:45: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                             ^
+memorysystem.h:48:63: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                               ^
+memorysystem.h:48:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                                            ^
+memorysystem.h:51:21: error: ‘u_int_t’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                     ^
+memorysystem.h:51:52: error: expected primary-expression before ‘*’ token
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                    ^
+memorysystem.h:51:54: error: ‘page_table’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                      ^
+memorysystem.h:51:66: error: expected primary-expression before ‘bool’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                  ^
+memorysystem.h:51:85: error: expected primary-expression before ‘char’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                     ^
+memorysystem.h:51:98: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                                  ^
+memorysystem.h:52:22: error: ‘u_int_t’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                      ^
+memorysystem.h:52:40: error: expected primary-expression before ‘const’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                        ^
+memorysystem.h:52:85: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                     ^
+memorysystem.h:52:86: error: ‘page_table’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                      ^
+memorysystem.h:52:104: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                        ^
+memorysystem.h:52:105: error: ‘tlb’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                         ^
+memorysystem.h:52:110: error: expected primary-expression before ‘char’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                              ^
+memorysystem.h:52:124: error: expression list treated as compound expression in initializer [-fpermissive]
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                                            ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:91:3: error: ‘u_int_t’ was not declared in this scope
+   u_int_t page_num = ParsePageNum(logic_addr[i]);
+   ^
+memorysystem.cpp:91:11: error: expected ‘;’ before ‘page_num’
+   u_int_t page_num = ParsePageNum(logic_addr[i]);
+           ^
+memorysystem.cpp:92:11: error: expected ‘;’ before ‘offset’
+   u_int_t offset = ParseOffset(logic_addr[i]);
+           ^
+memorysystem.cpp:96:20: error: ‘page_num’ was not declared in this scope
+    SearchPageTable(page_num, *page_table, hit, frames);
+                    ^
+memorysystem.cpp:96:54: error: ‘SearchPageTable’ cannot be used as a function
+    SearchPageTable(page_num, *page_table, hit, frames);
+                                                      ^
+memorysystem.cpp:99:68: error: ‘PageFaultHandler’ cannot be used as a function
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:160:15: error: redefinition of ‘int SearchTLB’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:48:5: error: ‘int SearchTLB’ previously defined here
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+     ^
+memorysystem.cpp:160:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+memorysystem.cpp:160:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                       ^
+memorysystem.cpp:160:41: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                         ^
+memorysystem.cpp:160:46: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                              ^
+memorysystem.cpp:160:64: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                                                ^
+make: *** [memorysystem.o] Error 1
+17:19:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:44:18: error: ‘u_int_t’ was not declared in this scope
+ int ParsePageNum(u_int_t logical_addr);
+                  ^
+memorysystem.h:45:17: error: ‘u_int_t’ was not declared in this scope
+ int ParseOffset(u_int_t logical_addr);
+                 ^
+memorysystem.h:48:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+               ^
+memorysystem.h:48:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                       ^
+memorysystem.h:48:40: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                        ^
+memorysystem.h:48:45: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                             ^
+memorysystem.h:48:63: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                               ^
+memorysystem.h:48:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                                            ^
+memorysystem.h:51:21: error: ‘u_int_t’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                     ^
+memorysystem.h:51:52: error: expected primary-expression before ‘*’ token
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                    ^
+memorysystem.h:51:54: error: ‘page_table’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                      ^
+memorysystem.h:51:66: error: expected primary-expression before ‘bool’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                  ^
+memorysystem.h:51:85: error: expected primary-expression before ‘char’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                     ^
+memorysystem.h:51:98: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                                  ^
+memorysystem.h:52:22: error: ‘u_int_t’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                      ^
+memorysystem.h:52:40: error: expected primary-expression before ‘const’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                        ^
+memorysystem.h:52:85: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                     ^
+memorysystem.h:52:86: error: ‘page_table’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                      ^
+memorysystem.h:52:104: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                        ^
+memorysystem.h:52:105: error: ‘tlb’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                         ^
+memorysystem.h:52:110: error: expected primary-expression before ‘char’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                              ^
+memorysystem.h:52:124: error: expression list treated as compound expression in initializer [-fpermissive]
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                                            ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:91:44: error: ‘ParsePageNum’ cannot be used as a function
+   int page_num = ParsePageNum(logic_addr[i]);
+                                            ^
+memorysystem.cpp:92:41: error: ‘ParseOffset’ cannot be used as a function
+   int offset = ParseOffset(logic_addr[i]);
+                                         ^
+memorysystem.cpp:96:54: error: ‘SearchPageTable’ cannot be used as a function
+    SearchPageTable(page_num, *page_table, hit, frames);
+                                                      ^
+memorysystem.cpp:99:68: error: ‘PageFaultHandler’ cannot be used as a function
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:160:15: error: redefinition of ‘int SearchTLB’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:48:5: error: ‘int SearchTLB’ previously defined here
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+     ^
+memorysystem.cpp:160:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+memorysystem.cpp:160:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                       ^
+memorysystem.cpp:160:41: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                         ^
+memorysystem.cpp:160:46: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                              ^
+memorysystem.cpp:160:64: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                                                ^
+make: *** [memorysystem.o] Error 1
+17:20:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:44:18: error: ‘u_int_t’ was not declared in this scope
+ int ParsePageNum(u_int_t logical_addr);
+                  ^
+memorysystem.h:45:17: error: ‘u_int_t’ was not declared in this scope
+ int ParseOffset(u_int_t logical_addr);
+                 ^
+memorysystem.h:48:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+               ^
+memorysystem.h:48:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                       ^
+memorysystem.h:48:40: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                        ^
+memorysystem.h:48:45: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                             ^
+memorysystem.h:48:63: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                               ^
+memorysystem.h:48:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+                                                                            ^
+memorysystem.h:51:21: error: ‘u_int_t’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                     ^
+memorysystem.h:51:52: error: expected primary-expression before ‘*’ token
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                    ^
+memorysystem.h:51:54: error: ‘page_table’ was not declared in this scope
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                      ^
+memorysystem.h:51:66: error: expected primary-expression before ‘bool’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                  ^
+memorysystem.h:51:85: error: expected primary-expression before ‘char’
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                     ^
+memorysystem.h:51:98: error: expression list treated as compound expression in initializer [-fpermissive]
+ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
+                                                                                                  ^
+memorysystem.h:52:22: error: ‘u_int_t’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                      ^
+memorysystem.h:52:40: error: expected primary-expression before ‘const’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                        ^
+memorysystem.h:52:85: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                     ^
+memorysystem.h:52:86: error: ‘page_table’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                      ^
+memorysystem.h:52:104: error: expected primary-expression before ‘*’ token
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                        ^
+memorysystem.h:52:105: error: ‘tlb’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                         ^
+memorysystem.h:52:110: error: expected primary-expression before ‘char’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                              ^
+memorysystem.h:52:124: error: expression list treated as compound expression in initializer [-fpermissive]
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+                                                                                                                            ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:91:44: error: ‘ParsePageNum’ cannot be used as a function
+   int page_num = ParsePageNum(logic_addr[i]);
+                                            ^
+memorysystem.cpp:92:41: error: ‘ParseOffset’ cannot be used as a function
+   int offset = ParseOffset(logic_addr[i]);
+                                         ^
+memorysystem.cpp:96:54: error: ‘SearchPageTable’ cannot be used as a function
+    SearchPageTable(page_num, *page_table, hit, frames);
+                                                      ^
+memorysystem.cpp:99:68: error: ‘PageFaultHandler’ cannot be used as a function
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:160:15: error: redefinition of ‘int SearchTLB’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:48:5: error: ‘int SearchTLB’ previously defined here
+ int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+     ^
+memorysystem.cpp:160:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+memorysystem.cpp:160:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                       ^
+memorysystem.cpp:160:41: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                         ^
+memorysystem.cpp:160:46: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                              ^
+memorysystem.cpp:160:64: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                                                ^
+make: *** [memorysystem.o] Error 1
+18:29:41 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:117:34: error: ‘page_t’ was not declared in this scope
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                  ^
+memorysystem.cpp:117:42: error: expected primary-expression before ‘)’ token
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                          ^
+memorysystem.cpp:117:44: error: expected ‘;’ before ‘malloc’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                            ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:160:15: error: ‘int SearchTLB’ redeclared as different kind of symbol
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:45:5: error: previous declaration of ‘int SearchTLB(int, tlb_t*, bool*, char**)’
+ int SearchTLB(int page_num, tlb_t *tlb, bool *is_tlb_hit, char **frames);
+     ^
+memorysystem.cpp:160:15: error: ‘u_int_t’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+               ^
+memorysystem.cpp:160:39: error: expected primary-expression before ‘*’ token
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                       ^
+memorysystem.cpp:160:41: error: ‘tlb’ was not declared in this scope
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                         ^
+memorysystem.cpp:160:46: error: expected primary-expression before ‘bool’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                              ^
+memorysystem.cpp:160:64: error: expected primary-expression before ‘char’
+ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+                                                                ^
+make: *** [memorysystem.o] Error 1
+18:32:22 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:109:41: error: expected primary-expression before ‘)’ token
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                         ^
+memorysystem.cpp:109:43: error: expected ‘;’ before ‘malloc’
+  (*physical_memory) = (physical_memory *) malloc(sizeof(physical_memory));
+                                           ^
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                       ^
+memorysystem.cpp:117:34: error: ‘page_t’ was not declared in this scope
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                  ^
+memorysystem.cpp:117:42: error: expected primary-expression before ‘)’ token
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                          ^
+memorysystem.cpp:117:44: error: expected ‘;’ before ‘malloc’
+   (*physical_memory)->list[i] = (page_t *) malloc(sizeof(page_t));
+                                            ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp:121:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i]->frames = NULL;
+                       ^
+memorysystem.cpp: In function ‘int SearchTLB(int, tlb_t*, bool*, char**)’:
+memorysystem.cpp:166:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp: In function ‘int CreatePageTable(page_table_t**)’:
+memorysystem.cpp:192:18: error: ‘struct page_table_t’ has no member named ‘list’
+   (*page_table)->list[i] = 0;
+                  ^
+memorysystem.cpp: In function ‘int SearchPageTable(int, page_table_t*, bool*, char**)’:
+memorysystem.cpp:216:46: error: invalid conversion from ‘int’ to ‘char*’ [-fpermissive]
+  *frames = page_table->page_to_frame[page_num];
+                                              ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:232:22: error: ‘int PageFaultHandler’ redeclared as different kind of symbol
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
+                      ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:49:5: error: previous declaration of ‘int PageFaultHandler(int, const char*, page_table_t*, tlb_t*, char**)’
+ int PageFaultHandler(int page_num, const char * phys_mem_filename, page_table_t *page_table, tlb_t *tlb, char ** frames);
+     ^
+memorysystem.cpp:232:22: error: ‘u_int_t’ was not declared in this scope
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
+                      ^
+memorysystem.cpp:232:40: error: expected primary-expression before ‘const’
+ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
+                                        ^
+memorysystem.cpp:233:16: error: expected primary-expression before ‘*’ token
+   page_table_t *page_table, tlb_t *tlb, char ** frames) {
+                ^
+memorysystem.cpp:233:17: error: ‘page_table’ was not declared in this scope
+   page_table_t *page_table, tlb_t *tlb, char ** frames) {
+                 ^
+memorysystem.cpp:233:35: error: expected primary-expression before ‘*’ token
+   page_table_t *page_table, tlb_t *tlb, char ** frames) {
+                                   ^
+memorysystem.cpp:233:36: error: ‘tlb’ was not declared in this scope
+   page_table_t *page_table, tlb_t *tlb, char ** frames) {
+                                    ^
+memorysystem.cpp:233:41: error: expected primary-expression before ‘char’
+   page_table_t *page_table, tlb_t *tlb, char ** frames) {
+                                         ^
+make: *** [memorysystem.o] Error 1
+18:52:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:99:68: error: invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]
+     PageFaultHandler(page_num, DISK_FILE, *page_table, *tlb, frames);
+                                                                    ^
+memorysystem.cpp:99:68: error: cannot convert ‘page_table_t*’ to ‘const char*’ for argument ‘3’ to ‘int PageFaultHandler(int, int, const char*, page_table_t*, tlb_t*)’
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:117:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:118:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:165:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:165:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:170:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, const char*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:234:2: error: ‘page_t’ was not declared in this scope
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+  ^
+memorysystem.cpp:234:11: error: ‘new_page’ was not declared in this scope
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+           ^
+memorysystem.cpp:234:31: error: expected primary-expression before ‘)’ token
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+                               ^
+memorysystem.cpp:234:33: error: expected ‘;’ before ‘malloc’
+  page_t * new_page = (page_t *) malloc(sizeof(page_t));
+                                 ^
+memorysystem.cpp:259:14: error: ‘struct page_table_t’ has no member named ‘list’
+  page_table->list[page_num] = new_page;
+              ^
+memorysystem.cpp:261:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:261:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
