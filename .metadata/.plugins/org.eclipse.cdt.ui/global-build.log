@@ -1088,3 +1088,35 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+15:23:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+memorysystem.o: In function `main':
+/home/john/Desktop/Project 6/Project_6/MemorySystem//memorysystem.cpp:66: undefined reference to `CreateTLB(tlb_t*)'
+collect2: error: ld returned 1 exit status
+make: *** [MemorySystem] Error 1
+15:23:58 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:66:24: error: cannot convert ‘tlb_t*’ to ‘tlb_t**’ for argument ‘1’ to ‘int CreateTLB(tlb_t**)’
+  result = CreateTLB(tlb); // Create a TLB
+                        ^
+make: *** [memorysystem.o] Error 1
+15:24:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:98:59: error: cannot convert ‘tlb_t**’ to ‘tlb_t*’ for argument ‘4’ to ‘int PageFaultHandler(u_int_t, const char*, page_table_t*, tlb_t*)’
+     PageFaultHandler(page_num, DISK_FILE, *page_table, tlb);
+                                                           ^
+make: *** [memorysystem.o] Error 1
+15:24:44 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:26:04 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

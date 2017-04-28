@@ -1,7 +1,7 @@
-15:18:39 **** Incremental Build of configuration Default for project MemorySystem ****
+15:26:04 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
 
-15:18:39 Build Finished (took 258ms)
+15:26:04 Build Finished (took 254ms)
 

@@ -62,7 +62,7 @@ int main() {
 	num_addr = i; // Number of address
 	fclose(input); // Close the input file
 
-	tlb_t ** tlb = (tlb_t **) malloc(sizeof(tlb_t *)); // Create a tlb
+	tlb_t ** tlb;
 	result = CreateTLB(tlb); // Create a TLB
 
 	if (tlb == NULL) {
