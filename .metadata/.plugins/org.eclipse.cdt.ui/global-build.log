@@ -273,3 +273,226 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 20:13:09 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
 g++ -g -o Debug/MemorySystem memorysystem.o
+20:17:22 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:17:29 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:17:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:19:08 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:19:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:19:32 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:20:07 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:20:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:20:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:21:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:23:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:23:16 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:23:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:23:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:23:56 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:24:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:25:20 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:26:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:32:56 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:33:21 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:33:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:33:51 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:34:16 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:34:24 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:34:51 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:36:44 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:62:34: error: invalid conversion from ‘void*’ to ‘bool*’ [-fpermissive]
+   bool *hit = malloc(sizeof(bool));
+                                  ^
+memorysystem.cpp:66:7: warning: converting ‘false’ to pointer type ‘bool*’ [-Wconversion-null]
+   hit = false;
+       ^
+make: *** [memorysystem.o] Error 1
+20:39:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:66:7: warning: converting ‘false’ to pointer type ‘bool*’ [-Wconversion-null]
+   hit = false;
+       ^
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:39:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:40:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:42:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:42:31 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:42:54 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:43:43 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:44:00 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:44:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:45:10 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:45:32 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:46:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:46:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:46:19 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:46:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:46:46 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:47:00 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:47:12 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:48:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:48:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:48:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:48:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:49:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:53:08 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:134:12: warning: converting to non-pointer type ‘char’ from NULL [-Wconversion-null]
+   **frames = NULL;
+            ^
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:53:21 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:53:37 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:55:07 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:55:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:55:52 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:56:29 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
