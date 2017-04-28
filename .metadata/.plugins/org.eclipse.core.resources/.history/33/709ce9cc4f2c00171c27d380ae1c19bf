@@ -111,18 +111,18 @@ int main() {
  */
 int CreateTLB(tlb_t **tlb) {
 	// Assign memory to the tlb
-	(*tlb) = (tlb_t *) malloc(sizeof(tlb_t));
+	*tlb = (tlb_t *) malloc(sizeof(tlb_t));
 
-	if ((*tlb) == NULL) {
+	if (*tlb == NULL) {
 		return -1;
 	}
 
 	int i;
 	for (i = 0; i < TLB_SIZE; i++) {
-		(*tlb)->list[i] = NULL;
+		*tlb->list[i] = NULL;
 	}
 
-	(*tlb)->size = 0;
+	*tlb->size = 0;
 
 	return 0;
 }
@@ -241,7 +241,7 @@ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 
 	fclose(disk);
 
-	page_table->list[page_num] = new_page;
+	//page_table->list[page_num] = new_page;
 
 	return 0;
 }

@@ -1006,3 +1006,85 @@ make: *** [memorysystem.o] Error 1
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+15:02:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:02:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:03:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:07:28 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:07:48 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:30 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:09:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:09:19 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:09:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:10:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:10:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:10:52 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:11:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:11:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:17:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreateTLB(tlb_t**)’:
+memorysystem.cpp:122:9: error: request for member ‘list’ in ‘* tlb’, which is of pointer type ‘tlb_t*’ (maybe you meant to use ‘->’ ?)
+   *tlb->list[i] = NULL;
+         ^
+memorysystem.cpp:125:8: error: request for member ‘size’ in ‘* tlb’, which is of pointer type ‘tlb_t*’ (maybe you meant to use ‘->’ ?)
+  *tlb->size = 0;
+        ^
+make: *** [memorysystem.o] Error 1
+15:18:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:18:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
