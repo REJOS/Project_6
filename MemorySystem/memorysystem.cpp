@@ -5,17 +5,29 @@
  *      Author: john
  */
 
+/*
+ * Includes block
+ */
 #include <cstdio>
 #include <stdlib.h>
 #include <cstring>
 #include "memorysystem.h"
 
+/*
+ * Define Constants
+ */
 #define BUFFER_SIZE 256
 #define MAX_ADDRESSES 100
 
 const char * IN_FILE = "input.txt";
 const char * DISK_FILE = "BACKING_STORE";
 
+/*
+ * Function: main()
+ * Parameters: None
+ * Return Type: int
+ * Description:
+ */
 int main() {
 
 	const char *delimiters = ", ";
@@ -29,14 +41,18 @@ int main() {
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
+        // File is invalid
 	if (input == NULL) {
 		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
-
+        
+        // Valid file, read it in as long as buffer isn't full
 	while (fgets(buffer, BUFFER_SIZE, input) != NULL) {
 
 		last_addr = strtok(buffer, delimiters);
+
+                // Populate array with logical address from file
 		while (last_addr != NULL) {
 			logic_addr[i] = atoi(last_addr);
 			//printf("%d", logic_adrr[i]);
@@ -45,19 +61,23 @@ int main() {
 		}
 ;
 	}
-	num_addr = i;
-	fclose(input);
+	num_addr = i; // Number of address
+	fclose(input); // Close the input file
 
 	tlb_t * tlb;
-	result = CreateTLB(tlb);
-
+	result = CreateTLB(tlb); // Create a TLB
+                // NEEDS AN IF STATEMENT HERE
 	page_table_t * page_table;
-	result = CreatePageTable(page_table);
+	result = CreatePageTable(page_table); // Create a page table
+
+         // result is an error code
 	if(result) {
 		printf("Error: Could not create page table.");
 		return -1;
 	}
 
+         // Obtain the page number and offset for each address,
+         // then search for them in the page table.
 	for(i = 0; i < num_addr; i++) {
 		bool * hit;
 		char ** frames;
@@ -73,10 +93,18 @@ int main() {
 		}
 	}
 
+        printf("Works");
 	return 0;
 }
 
+/*
+ * Function: CreateTLB()
+ * Parameters: tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
 int CreateTLB(tlb_t *tlb) {
+        // Assign memory to the tlb
 	tlb = (tlb_t *) malloc(sizeof(tlb_t));
 
 	if (tlb == NULL) {
@@ -93,6 +121,15 @@ int CreateTLB(tlb_t *tlb) {
 	return 0;
 }
 
+/*
+ * Function: SearchTLB()
+ * Parameters: u_int_t page_num
+ *             tlb_t * tlb
+ *             bool *is_tlb_hit
+ *             char **frames
+ * Return Type: int
+ * Description:
+ */
 int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 		char **frames) {
 	if(tlb->size>0){
@@ -109,6 +146,12 @@ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 	return 0;
 }
 
+/*
+ * Function: CreatePageTable()
+ * Parameters: page_table_t *page_table
+ * Return Type: int
+ * Description:
+ */
 int CreatePageTable(page_table_t *page_table) {
 
 	page_table = (page_table_t *) malloc(sizeof(page_table_t));
@@ -126,6 +169,15 @@ int CreatePageTable(page_table_t *page_table) {
 	return 0;
 }
 
+/*
+ * Function: SearchPageTable()
+ * Parameters: u_int_t page_num
+ *             page_table_t * page_table
+               bool *is_page_hit
+               char **frames
+ * Return Type: int
+ * Description:
+ */
 int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit,
 		char **frames) {
 
@@ -139,6 +191,16 @@ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_h
 
 	return 0;
 }
+
+/*
+ * Function: PageFaultHandler()
+ * Parameters: u_int_t page_num
+               const char * phys_mem_filename
+               page_table_t *page_table
+               tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
 int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 		page_table_t *page_table, tlb_t *tlb) {
 
@@ -170,10 +232,25 @@ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 	return 0;
 }
 
+/*
+ * Function: ParsePageNum()
+ * Parameters: u_int_t logical_addr
+ * Return Type: u_int_t
+ * Description: Take the logical address and
+ *              returns the page number of the
+ *              address.
+ */
 u_int_t ParsePageNum(u_int_t logical_addr) {
 	return (logical_addr | PAGE_MASK) >> PAGE_SHIFT;
 }
 
+/*
+ * Function: ParseOffset()
+ * Parameters: u_int_t logical_addr
+ * Return Type: u_int_t
+ * Description: Takes the logical address and
+ *              returns the offset of the address.
+ */
 u_int_t ParseOffset(u_int_t logical_addr) {
 	return (logical_addr | OFFSET_MASK);
 }
