@@ -79,13 +79,14 @@ int main() {
          // Obtain the page number and offset for each address,
          // then search for them in the page table.
 	for(i = 0; i < num_addr; i++) {
-		bool * hit;
-		char ** frames;
+		bool *hit = (bool *) malloc(sizeof(bool));
+		char ** frames = (char **) malloc(sizeof(char *));
 		u_int_t page_num = ParsePageNum(logic_addr[i]);
 		u_int_t offset= ParseOffset(logic_addr[i]);
 		*hit = false;
 		//SearchTLB(page_num, tlb, hit, frames);
 		if(*hit == false) {
+			printf("HI");
 			SearchPageTable(page_num, page_table, hit, frames);
 			if (*hit == false) {
 				PageFaultHandler(page_num, DISK_FILE, page_table, tlb);
