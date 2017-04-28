@@ -21,11 +21,11 @@ int main() {
 	const char *delimiters = ", ";
 	char buffer[BUFFER_SIZE];
 	char *last_addr;
-	int logic_addr[MAX_ADDRESSES];
+	u_int_t logic_addr[MAX_ADDRESSES];
 	int i = 0;
 	int num_addr;
 	int result;
-
+	printf("hi");
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
@@ -43,27 +43,53 @@ int main() {
 			last_addr = strtok(NULL, delimiters);
 			i++;
 		}
-
+;
 	}
-
 	num_addr = i;
-
 	fclose(input);
 
+	tlb_t * tlb;
+	result = CreateTLB(tlb);
+
 	page_table_t * page_table;
-
 	result = CreatePageTable(page_table);
-
 	if(result) {
 		printf("Error: Could not create page table.");
+		return -1;
 	}
 
+	for(i = 0; i < num_addr; i++) {
+		bool * hit;
+		char ** frames;
+		u_int_t page_num = ParsePageNum(logic_addr[i]);
+		u_int_t offset= ParseOffset(logic_addr[i]);
+		*hit = false;
+		//SearchTLB(page_num, tlb, hit, frames);
+		if(*hit == false) {
+			SearchPageTable(page_num, page_table, hit, frames);
+			if (*hit == false) {
+				PageFaultHandler(page_num, DISK_FILE, page_table, tlb);
+			}
+		}
+	}
 
 	return 0;
 }
 
 int CreateTLB(tlb_t *tlb) {
+	tlb = (tlb_t *) malloc(sizeof(tlb_t));
+
+	if (tlb == NULL) {
+		return -1;
+	}
+
+	int i;
+	for (i = 0; i < TLB_SIZE; i++) {
+		tlb->list[i] = NULL;
+	}
+
 	tlb->size=0;
+
 	return 0;
 }
 
@@ -77,7 +103,7 @@ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 		}
 	}
 	}
-	is_tlb_hit = false;
+	*is_tlb_hit = false;
 	*frames = NULL;
 
 	return 0;
@@ -101,17 +127,19 @@ int CreatePageTable(page_table_t *page_table) {
 }
 
 int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit,
-		char **frame_num) {
+		char **frames) {
 
 	if (page_table->list[page_num]->frames == NULL) {
-		frame_num = NULL;
+		*frames = NULL;
 		*is_page_hit = false;
 		return 0;
 	}
 
+	*frames = page_table->list[page_num]->frames;
+
 	return 0;
 }
-int pageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
+int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 		page_table_t *page_table, tlb_t *tlb) {
 
 	page_t * new_page = (page_t *) malloc(sizeof(page_t));

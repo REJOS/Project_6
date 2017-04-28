@@ -1,4 +1,4 @@
-makfile:
+makefile:
 all: MemorySystem
 
 MemorySystem: memorysystem.o

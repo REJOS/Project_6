@@ -547,3 +547,9 @@ java.io.FileNotFoundException: /home/john/Desktop/Project 6/Project_6/MemorySyst
 
 !ENTRY org.eclipse.launchbar.core 2 0 2017-04-27 17:00:33.980
 !MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-04-27 19:38:36.376
+!MESSAGE Indexed 'MemorySystem' (1 sources, 1 headers) in 0.023 sec: 86 declarations; 152 references; 3 unresolved inclusions; 2 syntax errors; 41 unresolved names (15%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-04-27 19:43:54.382
+!MESSAGE Indexed 'MemorySystem' (1 sources, 45 headers) in 0.393 sec: 1,675 declarations; 2,532 references; 0 unresolved inclusions; 2 syntax errors; 4 unresolved names (0.095%)

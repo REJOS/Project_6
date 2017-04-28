@@ -132,3 +132,144 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+19:29:42 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:42: error: ‘ParsePageNumber’ was not declared in this scope
+   SearchTLB(ParsePageNumber(logic_addr[i])), tlb, b, frames);
+                                          ^
+memorysystem.cpp:64:60: error: expected ‘;’ before ‘)’ token
+   SearchTLB(ParsePageNumber(logic_addr[i])), tlb, b, frames);
+                                                            ^
+memorysystem.cpp: In function ‘int CreateTLB(tlb_t*)’:
+memorysystem.cpp:71:7: error: no match for ‘operator=’ (operand types are ‘tlb_t’ and ‘tlb_t*’)
+  *tlb = (tlb_t *) malloc(sizeof(tlb_t));
+       ^
+memorysystem.cpp:71:7: note: candidate is:
+In file included from memorysystem.cpp:11:0:
+memorysystem.h:32:3: note: tlb_t& tlb_t::operator=(const tlb_t&)
+ } tlb_t;
+   ^
+memorysystem.h:32:3: note:   no known conversion for argument 1 from ‘tlb_t*’ to ‘const tlb_t&’
+memorysystem.cpp: In function ‘int SearchTLB(u_int_t, tlb_t*, bool*, char**)’:
+memorysystem.cpp:97:13: warning: converting ‘false’ to pointer type ‘bool*’ [-Wconversion-null]
+  is_tlb_hit = false;
+             ^
+make: *** [memorysystem.o] Error 1
+19:44:38 **** Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:42: error: ‘ParsePageNumber’ was not declared in this scope
+   SearchTLB(ParsePageNumber(logic_addr[i])), tlb, b, frames);
+                                          ^
+memorysystem.cpp:64:60: error: expected ‘;’ before ‘)’ token
+   SearchTLB(ParsePageNumber(logic_addr[i])), tlb, b, frames);
+                                                            ^
+memorysystem.cpp: In function ‘int CreateTLB(tlb_t*)’:
+memorysystem.cpp:71:7: error: no match for ‘operator=’ (operand types are ‘tlb_t’ and ‘tlb_t*’)
+  *tlb = (tlb_t *) malloc(sizeof(tlb_t));
+       ^
+memorysystem.cpp:71:7: note: candidate is:
+In file included from memorysystem.cpp:11:0:
+memorysystem.h:32:3: note: tlb_t& tlb_t::operator=(const tlb_t&)
+ } tlb_t;
+   ^
+memorysystem.h:32:3: note:   no known conversion for argument 1 from ‘tlb_t*’ to ‘const tlb_t&’
+make: *** [memorysystem.o] Error 1
+19:46:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:42: error: ‘ParsePageNumber’ was not declared in this scope
+   SearchTLB(ParsePageNumber(logic_addr[i]), tlb, b, frames);
+                                          ^
+make: *** [memorysystem.o] Error 1
+19:47:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:56: error: could not convert ‘tlb’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(ParsePageNum(logic_addr[i]), tlb, b, frames);
+                                                        ^
+make: *** [memorysystem.o] Error 1
+19:47:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:56: error: could not convert ‘tlb’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(ParsePageNum(logic_addr[i]), tlb, b, frames);
+                                                        ^
+make: *** [memorysystem.o] Error 1
+19:59:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+memorysystem.o: In function `main':
+/home/john/Desktop/Project 6/Project_6/MemorySystem//memorysystem.cpp:64: undefined reference to `SearchTLB(unsigned int, tlb_t, bool*, char**)'
+collect2: error: ld returned 1 exit status
+make: *** [MemorySystem] Error 1
+19:59:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:56: error: could not convert ‘tlb’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(ParsePageNum(logic_addr[i]), tlb, b, frames);
+                                                        ^
+make: *** [memorysystem.o] Error 1
+19:59:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:56: error: could not convert ‘tlb’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(ParsePageNum(logic_addr[i]), tlb, b, frames);
+                                                        ^
+memorysystem.cpp: In function ‘int SearchTLB(u_int_t, tlb_t, bool*, char**)’:
+memorysystem.cpp:89:8: error: base operand of ‘->’ has non-pointer type ‘tlb_t’
+  if(tlb->size>0){
+        ^
+memorysystem.cpp:90:24: error: base operand of ‘->’ has non-pointer type ‘tlb_t’
+  for(int i = 0; i < tlb->size; i++){
+                        ^
+memorysystem.cpp:91:9: error: base operand of ‘->’ has non-pointer type ‘tlb_t’
+   if(tlb->list[i]->page_num == page_num){
+         ^
+memorysystem.cpp:93:17: error: base operand of ‘->’ has non-pointer type ‘tlb_t’
+    *frames = tlb->list[i]->frames;
+                 ^
+make: *** [memorysystem.o] Error 1
+20:00:49 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:64:30: error: could not convert ‘tlb’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(5, tlb, b, frames);
+                              ^
+make: *** [memorysystem.o] Error 1
+20:01:24 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:52:21: error: ‘tlb’ was not declared in this scope
+  result = CreateTLB(tlb);
+                     ^
+memorysystem.cpp:64:29: error: could not convert ‘hi’ from ‘tlb_t*’ to ‘tlb_t’
+   SearchTLB(5, hi, b, frames);
+                             ^
+make: *** [memorysystem.o] Error 1
+20:02:35 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:11:53 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:13:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:13:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
