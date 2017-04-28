@@ -67,6 +67,10 @@ int CreateTLB(tlb_t *tlb) {
 	return 0;
 }
 
+<<<<<<< HEAD
+int SearchTLB(u_int_t page_num, tlb_t *tlb, bool *is_tlb_hit,
+		char **frame_num) {
+=======
 int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 		char **frames) {
 	if(tlb->size>0){
@@ -79,7 +83,7 @@ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 	}
 	is_tlb_hit = false;
 	*frames = NULL;
-
+>>>>>>> 0d5681fc92dad8a7b6215f7844fe9edda243d079
 	return 0;
 }
 
@@ -120,7 +124,11 @@ int pageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 		return -2;
 	}
 
+<<<<<<< HEAD
 	new_page->frames = (char *) malloc(sizeof(char) * PAGE_SIZE);
+=======
+	new_page->frames = (char *) malloc(PAGE_SIZE);
+>>>>>>> 0d5681fc92dad8a7b6215f7844fe9edda243d079
 
 	if (new_page->frames == NULL) {
 		return -2;
@@ -135,6 +143,10 @@ int pageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 
 	fseek(disk, page_num * PAGE_SIZE, SEEK_SET);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d5681fc92dad8a7b6215f7844fe9edda243d079
 	fread(new_page->frames, 1, 256, disk);
 
 	fclose(disk);
