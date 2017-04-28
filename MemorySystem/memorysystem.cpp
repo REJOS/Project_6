@@ -25,7 +25,6 @@ int main() {
 	int i = 0;
 	int num_addr;
 	int result;
-	printf("hi");
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
@@ -42,8 +41,7 @@ int main() {
 			//printf("%d", logic_adrr[i]);
 			last_addr = strtok(NULL, delimiters);
 			i++;
-		}
-;
+		};
 	}
 	num_addr = i;
 	fclose(input);
@@ -51,25 +49,31 @@ int main() {
 	tlb_t * tlb;
 	result = CreateTLB(tlb);
 
-	page_table_t * page_table;
+	page_table_t ** page_table;
+	page_table = (page_table_t **) malloc(sizeof(page_table_t *));
+
+	if (page_table == NULL) {
+		return -1;
+	}
+
 	result = CreatePageTable(page_table);
-	if(result) {
+	if (result) {
 		printf("Error: Could not create page table.");
 		return -1;
 	}
 
-	for(i = 0; i < num_addr; i++) {
+	for (i = 0; i < num_addr; i++) {
 		bool *hit = (bool *) malloc(sizeof(bool));
 		char ** frames = (char **) malloc(sizeof(char *));
 		u_int_t page_num = ParsePageNum(logic_addr[i]);
-		u_int_t offset= ParseOffset(logic_addr[i]);
+		u_int_t offset = ParseOffset(logic_addr[i]);
 		*hit = false;
 		//SearchTLB(page_num, tlb, hit, frames);
-		if(*hit == false) {
-			printf("HI");
-			SearchPageTable(page_num, page_table, hit, frames);
+		if (*hit == false) {
+			SearchPageTable(page_num, *page_table, hit, frames);
 			if (*hit == false) {
-				PageFaultHandler(page_num, DISK_FILE, page_table, tlb);
+				printf("no hit for %d\n", page_num);
+				PageFaultHandler(page_num, DISK_FILE, *page_table, tlb);
 			}
 		}
 	}
@@ -89,20 +93,19 @@ int CreateTLB(tlb_t *tlb) {
 		tlb->list[i] = NULL;
 	}
 
-	tlb->size=0;
+	tlb->size = 0;
 
 	return 0;
 }
 
-int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
-		char **frames) {
-	if(tlb->size>0){
-	for(int i = 0; i < tlb->size; i++){
-		if(tlb->list[i]->page_num == page_num){
-			*is_tlb_hit = true;
-			*frames = tlb->list[i]->frames;
+int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit, char **frames) {
+	if (tlb->size > 0) {
+		for (int i = 0; i < tlb->size; i++) {
+			if (tlb->list[i]->page_num == page_num) {
+				*is_tlb_hit = true;
+				*frames = tlb->list[i]->frames;
+			}
 		}
-	}
 	}
 	*is_tlb_hit = false;
 	*frames = NULL;
@@ -110,25 +113,29 @@ int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
 	return 0;
 }
 
-int CreatePageTable(page_table_t *page_table) {
+int CreatePageTable(page_table_t **page_table) {
 
-	page_table = (page_table_t *) malloc(sizeof(page_table_t));
+	(*page_table) = (page_table_t *) malloc(sizeof(page_table_t));
 
-	if (page_table == NULL) {
+	if ((*page_table) == NULL) {
 		return -1;
 	}
 
 	int i;
 	for (i = 0; i < NUM_PAGES; i++) {
-		page_table->list[i] = NULL;
+		(*page_table)->list[i] = (page_t *) malloc(sizeof(page_t));
+		if ((*page_table)->list[i] == NULL) {
+			return -1;
+		}
+		(*page_table)->list[i]->frames = NULL;
 	}
-	page_table->num_entries = 0;
+	(*page_table)->num_entries = 0;
 
 	return 0;
 }
 
-int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit,
-		char **frames) {
+int SearchPageTable(u_int_t page_num, page_table_t * page_table,
+		bool *is_page_hit, char **frames) {
 
 	if (page_table->list[page_num]->frames == NULL) {
 		*frames = NULL;
@@ -137,6 +144,8 @@ int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_h
 	}
 
 	*frames = page_table->list[page_num]->frames;
+
+	*is_page_hit = true;
 
 	return 0;
 }
@@ -168,13 +177,15 @@ int PageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 
 	fclose(disk);
 
+
+
 	return 0;
 }
 
 u_int_t ParsePageNum(u_int_t logical_addr) {
-	return (logical_addr | PAGE_MASK) >> PAGE_SHIFT;
+	return (logical_addr & PAGE_MASK) >> PAGE_SHIFT;
 }
 
 u_int_t ParseOffset(u_int_t logical_addr) {
-	return (logical_addr | OFFSET_MASK);
+	return (logical_addr & OFFSET_MASK);
 }

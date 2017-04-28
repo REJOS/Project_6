@@ -496,3 +496,487 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+21:10:20 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:12:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:14:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:14:16 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:14:31 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:14:52 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:22:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:22:42 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:23:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:23:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:23:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:32:10 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:32:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:33:27 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:34:07 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:34:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:34:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:02:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:03:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:04:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:04:29 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:06:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:08:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:33: error: request for member ‘frames’ in ‘page_table->page_table_t::list[page_num]’, which is of pointer type ‘page_t*’ (maybe you meant to use ‘->’ ?)
+  if (page_table->list[page_num].frames == NULL) {
+                                 ^
+make: *** [memorysystem.o] Error 1
+09:11:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:11:38 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:12:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:15:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:16:32 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:17:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:17:21 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:17:31 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:20:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:21:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:23: error: expected primary-expression before ‘]’ token
+  if (page_table->list[] == NULL) {
+                       ^
+make: *** [memorysystem.o] Error 1
+09:23:07 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:23:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:24:48 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:29: error: no match for ‘operator==’ (operand types are ‘page_t’ and ‘long int’)
+  if (*(page_table->list)[0] == NULL) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:25:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:29: error: no match for ‘operator==’ (operand types are ‘page_t’ and ‘int’)
+  if (*(page_table->list)[0] == 0) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:25:32 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:40: warning: NULL used in arithmetic [-Wpointer-arith]
+  if (*(page_table->list)[0]->frames == NULL) {
+                                        ^
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:26:10 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:40: warning: NULL used in arithmetic [-Wpointer-arith]
+  if (*(page_table->list[0])->frames == NULL) {
+                                        ^
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:26:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:29: error: request for member ‘frames’ in ‘page_table->page_table_t::list[0]’, which is of pointer type ‘page_t*’ (maybe you meant to use ‘->’ ?)
+  if (*(page_table->list[0]).frames == NULL) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:27:52 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:28:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:29: error: no match for ‘operator==’ (operand types are ‘page_t’ and ‘long int’)
+  if (*(page_table->list[0]) == NULL) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:29:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:138:29: error: no match for ‘operator==’ (operand types are ‘page_t’ and ‘page_t’)
+  if (*(page_table->list[0]) == p) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:29:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:30:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:29: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+  if (page_table->list[1] == 5) {
+                             ^
+make: *** [memorysystem.o] Error 1
+09:31:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchPageTable(u_int_t, page_table_t*, bool*, char**)’:
+memorysystem.cpp:137:37: error: expected primary-expression before ‘)’ token
+  if (page_table->list[1] == (*page_t) *frames) {
+                                     ^
+make: *** [memorysystem.o] Error 1
+09:31:37 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:37:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:39:29 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:40:19 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:45:42 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:46:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:46:49 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:47:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:47:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:47:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:48:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:10:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:11:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:15:36 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:15:58 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:16:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:17:03 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:18:03 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:18:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:19:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:20:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:21:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:21:20 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:22:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:23:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:23:22 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:24:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:25:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:25:19 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:27:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:27:21 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:27:46 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:35:28 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:35:38 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:36:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:37:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:38:08 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:45:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:55:41: error: expected primary-expression before ‘)’ token
+  page_table = malloc(sizeof(page_table *));
+                                         ^
+memorysystem.cpp: In function ‘int CreatePageTable(page_table_t**)’:
+memorysystem.cpp:121:13: error: cannot convert ‘page_table_t*’ to ‘page_table_t**’ in assignment
+  page_table = (page_table_t *) malloc(sizeof(page_table_t));
+             ^
+memorysystem.cpp:129:15: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   page_table->list[i] = (page_t *) malloc(sizeof(page_t));
+               ^
+memorysystem.cpp:130:19: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   if (page_table->list[i] == NULL) {
+                   ^
+memorysystem.cpp:133:15: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   page_table->list[i]->frames = NULL;
+               ^
+memorysystem.cpp:135:14: error: request for member ‘num_entries’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+  page_table->num_entries = 0;
+              ^
+make: *** [memorysystem.o] Error 1
+10:45:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:55:41: error: expected primary-expression before ‘)’ token
+  page_table = malloc(sizeof(page_table *));
+                                         ^
+memorysystem.cpp: In function ‘int CreatePageTable(page_table_t**)’:
+memorysystem.cpp:129:16: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   *page_table->list[i] = (page_t *) malloc(sizeof(page_t));
+                ^
+memorysystem.cpp:130:20: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   if (*page_table->list[i] == NULL) {
+                    ^
+memorysystem.cpp:133:16: error: request for member ‘list’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+   *page_table->list[i]->frames = NULL;
+                ^
+memorysystem.cpp:135:15: error: request for member ‘num_entries’ in ‘* page_table’, which is of pointer type ‘page_table_t*’ (maybe you meant to use ‘->’ ?)
+  *page_table->num_entries = 0;
+               ^
+make: *** [memorysystem.o] Error 1
+10:47:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:55:41: error: expected primary-expression before ‘)’ token
+  page_table = malloc(sizeof(page_table *));
+                                         ^
+make: *** [memorysystem.o] Error 1
+10:47:23 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:55:29: error: expected primary-expression before ‘)’ token
+  page_table = (page_table **) malloc(sizeof(page_table *));
+                             ^
+memorysystem.cpp:55:31: error: expected ‘;’ before ‘malloc’
+  page_table = (page_table **) malloc(sizeof(page_table *));
+                               ^
+make: *** [memorysystem.o] Error 1
+10:48:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:55:29: error: expected primary-expression before ‘)’ token
+  page_table = (page_table **) malloc(sizeof(page_table *));
+                             ^
+memorysystem.cpp:55:31: error: expected ‘;’ before ‘malloc’
+  page_table = (page_table **) malloc(sizeof(page_table *));
+                               ^
+make: *** [memorysystem.o] Error 1
+10:49:04 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:49:41 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:49:56 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:50:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:51:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+11:11:29 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+11:12:51 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+11:14:01 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+11:14:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+11:18:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
