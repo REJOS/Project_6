@@ -20,7 +20,7 @@ typedef unsigned int u_int_t;
 
 typedef struct {
 	u_int_t page_num;
-	char * frames;
+	char * frame;
 	u_int_t age;
 	//bool valid;
 } tlb_entry_t;
@@ -32,7 +32,7 @@ typedef struct {
 } tlb_t;
 
 typedef struct {
-	char * frames;
+	char * frame;
 } page_t;
 
 typedef struct {
