@@ -63,11 +63,22 @@ int main() {
 }
 
 int CreateTLB(tlb_t *tlb) {
+	tlb->size=0;
 	return 0;
 }
 
 int SearchTLB(u_int_t page_num, tlb_t * tlb, bool *is_tlb_hit,
-		u_int_t *frame_num) {
+		char **frames) {
+	if(tlb->size>0){
+	for(int i = 0; i < tlb->size; i++){
+		if(tlb->list[i]->page_num == page_num){
+			*is_tlb_hit = true;
+			*frames = tlb->list[i]->frames;
+		}
+	}
+	}
+	is_tlb_hit = false;
+	*frames = NULL;
 	return 0;
 }
 
@@ -91,7 +102,7 @@ int CreatePageTable(page_table_t *page_table) {
 int SearchPageTable(u_int_t page_num, page_table_t * page_table, bool *is_page_hit,
 		u_int_t *frame_num) {
 
-	if (page_table->list[page_num]->frame == NULL) {
+	if (page_table->list[page_num]->frames == NULL) {
 		frame_num = NULL;
 		is_page_hit = false;
 		return 0;
@@ -108,9 +119,9 @@ int pageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 		return -2;
 	}
 
-	new_page->frame = (char *) malloc(PAGE_SIZE);
+	new_page->frames = (char *) malloc(PAGE_SIZE);
 
-	if (new_page->frame == NULL) {
+	if (new_page->frames == NULL) {
 		return -2;
 	}
 
@@ -124,7 +135,7 @@ int pageFaultHandler(u_int_t page_num, const char * phys_mem_filename,
 	fseek(disk, page_num * PAGE_SIZE, SEEK_SET);
 
 
-	fread(new_page->frame, 1, 256, disk);
+	fread(new_page->frames, 1, 256, disk);
 
 	fclose(disk);
 
