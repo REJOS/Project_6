@@ -2640,3 +2640,15 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+15:35:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:36:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:37:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
