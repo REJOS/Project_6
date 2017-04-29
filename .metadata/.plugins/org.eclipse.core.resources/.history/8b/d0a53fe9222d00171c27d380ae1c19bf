@@ -141,15 +141,6 @@ int main() {
 						*page_table, *tlb);
 				page_fault_counter++;
 			}
-			if (USE_FIFO) {
-				result = TLB_replacement_FIFO(page_num, *frame_num, *tlb);
-			} else {
-				result = TLB_replacement_LRU(page_num, *frame_num, *tlb);
-			}
-			if (result) {
-				printf("Error: could not update TLB");
-				return -1;
-			}
 		} else {
 			tlb_hit_counter++;
 		}
@@ -216,7 +207,7 @@ int CreateTLB(tlb_t **tlb) {
 	}
 
 	(*tlb)->head = NULL;
-	(*tlb)->tail = NULL;
+	*tlb)->tail = NULL;
 	(*tlb)->size = 0;
 
 	return 0;

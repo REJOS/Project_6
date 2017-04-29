@@ -2652,3 +2652,83 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+16:01:20 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:229:9: error: using typedef-name ‘tlb_entry_t’ after ‘struct’
+  struct tlb_entry_t * curr;
+         ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: ‘tlb_entry_t’ has a previous declaration here
+ } tlb_entry_t;
+   ^
+memorysystem.cpp:229:27: error: invalid type in declaration before ‘;’ token
+  struct tlb_entry_t * curr;
+                           ^
+memorysystem.cpp:230:7: error: cannot convert ‘tlb_entry_t* {aka tlb_entry*}’ to ‘int*’ in assignment
+  curr = tlb->head;
+       ^
+memorysystem.cpp:233:14: error: request for member ‘page_num’ in ‘* curr’, which is of non-class type ‘int’
+    if (curr->page_num == page_num) {
+              ^
+memorysystem.cpp:234:24: error: request for member ‘frame_num’ in ‘* curr’, which is of non-class type ‘int’
+     *frame_num = curr->frame_num;
+                        ^
+make: *** [memorysystem.o] Error 1
+16:03:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+16:19:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:136:42: error: cannot convert ‘tlb_t**’ to ‘tlb_t*’ for argument ‘3’ to ‘int SearchTLB(int, int*, tlb_t*, bool*)’
+   SearchTLB(page_num, frame_num, tlb, hit);
+                                          ^
+make: *** [memorysystem.o] Error 1
+16:20:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+16:29:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+16:33:03 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:145:55: error: expression list treated as compound expression in initializer [-fpermissive]
+     int TLB_replacement_FIFO(page_num, frame_num, *tlb);
+                                                       ^
+memorysystem.cpp:145:55: error: invalid conversion from ‘tlb_t*’ to ‘int’ [-fpermissive]
+memorysystem.cpp:147:54: error: expression list treated as compound expression in initializer [-fpermissive]
+     int TLB_replacement_LRU(page_num, frame_num, *tlb);
+                                                      ^
+memorysystem.cpp:147:54: error: invalid conversion from ‘tlb_t*’ to ‘int’ [-fpermissive]
+make: *** [memorysystem.o] Error 1
+16:34:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:145:60: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+     result = TLB_replacement_FIFO(page_num, frame_num, *tlb);
+                                                            ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:57:5: error:   initializing argument 2 of ‘int TLB_replacement_FIFO(int, int, tlb_t*)’ [-fpermissive]
+ int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);
+     ^
+memorysystem.cpp:147:59: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+     result = TLB_replacement_LRU(page_num, frame_num, *tlb);
+                                                           ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:58:5: error:   initializing argument 2 of ‘int TLB_replacement_LRU(int, int, tlb_t*)’ [-fpermissive]
+ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb);
+     ^
+make: *** [memorysystem.o] Error 1
+16:54:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

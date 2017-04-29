@@ -142,9 +142,9 @@ int main() {
 				page_fault_counter++;
 			}
 			if (USE_FIFO) {
-				result = TLB_replacement_FIFO(page_num, *frame_num, *tlb);
+				result = TLB_replacement_FIFO(page_num, frame_num, *tlb);
 			} else {
-				result = TLB_replacement_LRU(page_num, *frame_num, *tlb);
+				result = TLB_replacement_LRU(page_num, frame_num, *tlb);
 			}
 			if (result) {
 				printf("Error: could not update TLB");

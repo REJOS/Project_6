@@ -133,22 +133,13 @@ int main() {
 		int page_num = ParsePageOrFrameNum(logic_addr[i]);
 		int offset = ParseOffset(logic_addr[i]);
 		*hit = false;
-		SearchTLB(page_num, frame_num, *tlb, hit);
+		SearchTLB(page_num, tlb, hit, frames);
 		if (*hit == false) {
 			SearchPageTable(page_num, frame_num, *page_table, hit);
 			if (*hit == false) {
 				PageFaultHandler(page_num, frame_num, *physical_memory,
 						*page_table, *tlb);
 				page_fault_counter++;
-			}
-			if (USE_FIFO) {
-				result = TLB_replacement_FIFO(page_num, *frame_num, *tlb);
-			} else {
-				result = TLB_replacement_LRU(page_num, *frame_num, *tlb);
-			}
-			if (result) {
-				printf("Error: could not update TLB");
-				return -1;
 			}
 		} else {
 			tlb_hit_counter++;
@@ -215,8 +206,11 @@ int CreateTLB(tlb_t **tlb) {
 		return -1;
 	}
 
-	(*tlb)->head = NULL;
-	(*tlb)->tail = NULL;
+	int i;
+	for (i = 0; i < TLB_SIZE; i++) {
+//		(*tlb)->list[i] = NULL;
+	}
+
 	(*tlb)->size = 0;
 
 	return 0;
