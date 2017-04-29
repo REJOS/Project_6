@@ -80,7 +80,7 @@ int main() {
 		scanf("%s", answer);
 	} while (strcmp(answer, "1") != 0 && strcmp(answer, "2") != 0);
 
-	if (strcmp(answer, "1") == 0) {
+	if (strcmp(answer, "1")) {
 		USE_FIFO = true;
 	} else {
 		USE_FIFO = false;
@@ -241,7 +241,6 @@ int SearchTLB(int page_num, int *frame_num, tlb_t * tlb, bool *is_tlb_hit) {
 				*is_tlb_hit = true;
 				return 0;
 			}
-			curr = curr->next;
 		}
 		*is_tlb_hit = false;
 	}
@@ -378,7 +377,7 @@ int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
 		tlb->head = tlb->head->next;
 		tlb->tail->next = (*ent);
 		tlb->tail = tlb->tail->next;
-		free(del);
+		//free(del);
 		return 0;
 	}
 
@@ -391,19 +390,14 @@ int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t * curr;
 	tlb_entry_t * del;
+	curr = tlb->head;
 	if (tlb->size > 0) {
-		curr = tlb->head;
 		while (curr->next != NULL) {
 			if (curr->next->page_num == page_num
 					&& curr->next->frame_num == frame_num) {
 				del = curr->next;
-				if (tlb->size > 2) {
-					curr->next = curr->next->next;
-				} else {
-					tlb->head = curr;
-					tlb->tail = curr;
-				}
-				free(del);
+				curr->next = curr->next->next;
+				//free(del);
 				tlb->size--;
 			}
 		}
