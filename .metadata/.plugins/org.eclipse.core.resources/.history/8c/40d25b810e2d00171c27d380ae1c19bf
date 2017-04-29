@@ -1,0 +1,62 @@
+/*
+ * memorysystem.h
+ *
+ *  Created on: Apr 17, 2017
+ *      Author: john
+ */
+
+#ifndef MEMORYSYSTEM_H_
+#define MEMORYSYSTEM_H_
+
+#define NUM_PAGES 256
+#define NUM_FRAMES 256
+#define PAGE_SIZE 256
+#define TLB_SIZE 16
+#define PAGE_MASK 0b00000000000000001111111100000000
+#define OFFSET_MASK 0b00000000000000000000000011111111
+#define PAGE_SHIFT 8
+
+typedef struct tlb_entry {
+    int page_num;
+    int frame_num;
+    struct tlb_entry * next;
+    //bool valid;
+} tlb_entry_t;
+
+typedef struct {
+    int size;
+    tlb_entry_t * head;
+    tlb_entry_t * tail;
+    //u_int_t rem_next;
+} tlb_t;
+
+
+typedef struct {
+	int page_to_frame[NUM_PAGES];
+} page_table_t;
+
+typedef struct {
+	char * frame[NUM_PAGES];
+	int size;
+} physical_memory_t;
+
+int ParsePageOrFrameNum(int logical_addr);
+int ParseOffset(int logical_addr);
+
+int CreateTLB(tlb_t **tlb);
+int SearchTLB(int page_num, int *frame_num, tlb_t *tlb, bool *is_tlb_hit);
+
+int CreatePhysicalMemory(physical_memory_t **physical_memory);
+GetPhysicalAddress(int frame_num, int offset, int * physical_address);
+int GetByteFromFrame(int frame_num, int byte);
+
+int CreatePageTable(page_table_t **page_table);
+int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
+int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb);
+
+int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);
+int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb);
+
+int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent);
+
+#endif /* MEMORYSYSTEM_H_ */

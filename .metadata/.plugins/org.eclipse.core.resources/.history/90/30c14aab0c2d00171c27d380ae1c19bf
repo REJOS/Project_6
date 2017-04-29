@@ -1,0 +1,381 @@
+/*
+ * MemorySystem.cpp
+ *
+ *  Created on: Apr 17, 2017
+ *      Author: john
+ */
+
+/*
+ * Includes block
+ */
+#include <cstdio>
+#include <stdlib.h>
+#include <cstring>
+#include "memorysystem.h"
+
+/*
+ * Define Constants
+ */
+#define BUFFER_SIZE 256
+#define MAX_ADDRESSES 10000
+
+const char * IN_FILE = "InputFile.txt";
+const char * DISK_FILE = "BACKING_STORE";
+bool USE_FIFO;
+bool SHOW_PHYSICAL_ADDRESS;
+
+/*
+ * Function: main()
+ * Parameters: None
+ * Return Type: int
+ * Description:
+ */
+int main() {
+
+	const char *delimiters = ", \n\r";
+	char buffer[BUFFER_SIZE];
+	char *last_addr;
+	int logic_addr[MAX_ADDRESSES];
+	int i = 0;
+	int num_addr;
+	int result;
+	char answer[50];
+	FILE * input;
+	input = fopen(IN_FILE, "r");
+
+	// File is invalid
+	if (input == NULL) {
+		printf("Error: could not read %s", IN_FILE);
+		return -1;
+	}
+
+	// Valid file, read it in as long as buffer isn't full
+	while (fgets(buffer, BUFFER_SIZE, input) != NULL) {
+
+		last_addr = strtok(buffer, delimiters);
+
+		// Populate array with logical address from file
+		while (last_addr != NULL) {
+			logic_addr[i] = atoi(last_addr);
+			last_addr = strtok(NULL, delimiters);
+			i++;
+		};
+	}
+	num_addr = i; // Number of address
+	fclose(input); // Close the input file
+
+	do {
+		printf("Display Physical Addresses? [yes | no]: ");
+		scanf("%s", answer);
+	} while (strcmp(answer, "yes") != 0 && strcmp(answer, "no") != 0);
+
+	if (strcmp(answer, "yes")) {
+		SHOW_PHYSICAL_ADDRESS = true;
+	} else {
+		SHOW_PHYSICAL_ADDRESS = false;
+	}
+
+	do {
+		printf("Choose TLB Replacement Strategy [1: FIFO, 2: LRU]: ");
+		scanf("%s", answer);
+	} while (strcmp(answer, "1") != 0 && strcmp(answer, "2") != 0);
+
+	if (strcmp(answer, "1")) {
+		USE_FIFO = true;
+	} else {
+		USE_FIFO = false;
+	}
+
+	tlb_t ** tlb = (tlb_t **) malloc(sizeof(tlb_t *)); // Create a tlb
+	result = CreateTLB(tlb); // Create a TLB
+
+	if (tlb == NULL) {
+		return -1;
+	}
+
+	physical_memory_t ** physical_memory;
+	physical_memory = (physical_memory_t **) malloc(
+			sizeof(physical_memory_t *)); // Create a page table
+
+	if (physical_memory == NULL) {
+		return -1;
+	}
+
+	result = CreatePhysicalMemory(physical_memory);
+	if (result) {
+		printf("Error: Could not create physical memory.");
+		return -1;
+	}
+
+	page_table_t ** page_table;
+	page_table = (page_table_t **) malloc(sizeof(page_table_t *)); // Create a page table
+
+	if (page_table == NULL) {
+		return -1;
+	}
+
+	result = CreatePageTable(page_table);
+	if (result) {
+		printf("Error: Could not create page table.");
+		return -1;
+	}
+
+	int * frame = (int *) malloc(sizeof(int));
+	bool *hit = (bool *) malloc(sizeof(bool));
+
+	// Obtain the page number and offset for each address,
+	// then search for them in the page table.
+	for (i = 0; i < num_addr; i++) {
+		int page_num = ParsePageNum(logic_addr[i]);
+		int offset = ParseOffset(logic_addr[i]);
+		*hit = false;
+		//SearchTLB(page_num, tlb, hit, frames);
+		if (*hit == false) {
+			SearchPageTable(page_num, frame, *page_table, hit);
+			if (*hit == false) {
+				PageFaultHandler(page_num, frame, *physical_memory, *page_table,
+						*tlb);
+			}
+		}
+	}
+
+	return 0;
+}
+
+int CreatePhysicalMemory(physical_memory_t **physical_memory) {
+
+	(*physical_memory) = (physical_memory_t *) malloc(
+			sizeof(physical_memory_t));
+
+	if ((*physical_memory) == NULL) {
+		return -1;
+	}
+
+	int i;
+	for (i = 0; i < NUM_PAGES; i++) {
+		(*physical_memory)->frame[i] = NULL;
+	}
+
+	(*physical_memory)->size = 0;
+
+	return 0;
+}
+
+/*
+ * Function: CreateTLB()
+ * Parameters: tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
+int CreateTLB(tlb_t **tlb) {
+	// Assign memory to the tlb
+	(*tlb) = (tlb_t *) malloc(sizeof(tlb_t));
+
+	if ((*tlb) == NULL) {
+		return -1;
+	}
+
+	int i;
+	for (i = 0; i < TLB_SIZE; i++) {
+//		(*tlb)->list[i] = NULL;
+	}
+
+	(*tlb)->size = 0;
+
+	return 0;
+}
+
+/*
+ * Function: SearchTLB()
+ * Parameters: u_int_t page_num
+ *             tlb_t * tlb
+ *             bool *is_tlb_hit
+ *             char **frames
+ * Return Type: int
+ * Description:
+ */
+int SearchTLB(int page_num, int *frame_num, tlb_t * tlb, bool *is_tlb_hit) {
+
+//	if (tlb->size > 0) {
+//		for (int i = 0; i < tlb->size; i++) {
+//			if (tlb->list[i]->page_num == page_num) {
+//				*is_tlb_hit = true;
+//				*frame_num = tlb->list[i]->frame_num;
+//				return 0;
+//			}
+//		}
+//	}
+//	*is_tlb_hit = false;
+//	*frame_num = 0;
+
+	return 0;
+}
+
+/*
+ * Function: CreatePageTable()
+ * Parameters: page_table_t *page_table
+ * Return Type: int
+ * Description:
+ */
+int CreatePageTable(page_table_t **page_table) {
+
+	(*page_table) = (page_table_t *) malloc(sizeof(page_table_t));
+
+	if ((*page_table) == NULL) {
+		return -1;
+	}
+
+	int i;
+	for (i = 0; i < NUM_PAGES; i++) {
+		(*page_table)->page_to_frame[i] = -1;
+	}
+
+	return 0;
+}
+
+/*
+ * Function: SearchPageTable()
+ * Parameters: u_int_t page_num
+ *             page_table_t * page_table
+ bool *is_page_hit
+ char **frames
+ * Return Type: int
+ * Description:
+ */
+int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
+		bool *is_page_hit) {
+
+	if (page_table->page_to_frame[page_num] == -1) {
+		*frame_num = -1;
+		*is_page_hit = false;
+		return 0;
+	}
+
+	*frame_num = page_table->page_to_frame[page_num];
+
+	*is_page_hit = true;
+
+	return 0;
+}
+
+/*
+ * Function: PageFaultHandler()
+ * Parameters: u_int_t page_num
+ const char * phys_mem_filename
+ page_table_t *page_table
+ tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
+int PageFaultHandler(int page_num, int * frame_num,
+		physical_memory_t * physical_memory, page_table_t *page_table,
+		tlb_t *tlb) {
+
+	char * frame = (char *) malloc(sizeof(char) * PAGE_SIZE);
+
+	if (frame == NULL) {
+		return -2;
+	}
+
+	FILE * disk;
+	disk = fopen(DISK_FILE, "rb");
+	if (disk == NULL) {
+		printf("Error: could not read %s", DISK_FILE);
+		return -1;
+	}
+
+	fseek(disk, page_num * PAGE_SIZE, SEEK_SET);
+
+	fread(frame, 1, 256, disk);
+
+	fclose(disk);
+
+	*frame_num = physical_memory->size;
+
+	physical_memory->frame[*frame_num] = frame;
+
+	page_table->page_to_frame[page_num] = *frame_num;
+
+	*frame_num = physical_memory->size++;
+
+	return 0;
+}
+
+/*
+ * Function: ParsePageNum()
+ * Parameters: u_int_t logical_addr
+ * Return Type: u_int_t
+ * Description: Take the logical address and
+ *              returns the page number of the
+ *              address.
+ */
+int ParsePageNum(int logical_addr) {
+	return (logical_addr & PAGE_MASK) >> PAGE_SHIFT;
+}
+
+/*
+ * Function: ParseOffset()
+ * Parameters: u_int_t logical_addr
+ * Return Type: u_int_t
+ * Description: Takes the logical address and
+ *              returns the offset of the address.
+ */
+int ParseOffset(int logical_addr) {
+	return (logical_addr & OFFSET_MASK);
+}
+
+int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
+	tlb_entry_t ** ent;
+	tlb_entry_t * del;
+	CreateEntry(page_num, frame_num, ent);
+
+	if (tlb->size == 0) {
+		tlb->head = (*ent);
+		tlb->tail = (*ent);
+		tlb->size++;
+		return 0;
+	}
+
+	if (tlb->size == TLB_SIZE) {
+		del = tlb->head;
+		tlb->head = tlb->head->next;
+		tlb->tail->next = (*ent);
+		tlb->tail = tlb->tail->next;
+		free(del);
+		return 0;
+	}
+
+	tlb->tail->next = (*ent);
+	tlb->tail = tlb->tail->next;
+	tlb->size++;
+	return 0;
+}
+
+int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
+	tlb_entry_t * curr;
+	tlb_entry_t * del;
+	curr = tlb->head;
+	if (tlb->size > 0) {
+		while (curr->next != NULL) {
+			if (curr->next->page_num == page_num
+					&& curr->next->frame_num == frame_num) {
+				del = curr->next;
+				curr->next = curr->next->next;
+				free(del);
+				tlb->size--;
+			}
+		}
+	}
+
+	TLB_replacement_FIFO(page_num, frame_num, tlb);
+	return 0;
+}
+
+int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent) {
+	(*ent) = (tlb_entry_t*) malloc(sizeof(tlb_entry_t));
+	(*ent)->frame_num = frame_num;
+	(*ent)->page_num = page_num;
+	(*ent)->next = NULL;
+	return 0;
+}
+

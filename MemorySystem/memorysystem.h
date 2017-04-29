@@ -12,7 +12,7 @@
 #define NUM_FRAMES 256
 #define PAGE_SIZE 256
 #define TLB_SIZE 16
-#define PAGE_MASK 0b00000000000000001111111100000000
+#define PAGE_OR_FRAME_MASK 0b00000000000000001111111100000000
 #define OFFSET_MASK 0b00000000000000000000000011111111
 #define PAGE_SHIFT 8
 
@@ -40,13 +40,16 @@ typedef struct {
 	int size;
 } physical_memory_t;
 
-int ParsePageNum(int logical_addr);
+int ParsePageOrFrameNum(int logical_addr);
 int ParseOffset(int logical_addr);
 
 int CreateTLB(tlb_t **tlb);
 int SearchTLB(int page_num, int *frame_num, tlb_t *tlb, bool *is_tlb_hit);
 
 int CreatePhysicalMemory(physical_memory_t **physical_memory);
+int GetPhysicalAddress(int frame_num, int offset);
+int GetByteFromFrame(int frame_num, physical_memory_t * physical_memory, int * byte);
+
 int CreatePageTable(page_table_t **page_table);
 int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
 int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb);

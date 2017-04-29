@@ -2317,3 +2317,326 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+09:52:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+09:53:04 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:01:31 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:01:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:21:53 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:22:27 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:23:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:25:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:26:31 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:31:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:47:59 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:58:17: error: ‘logic_adrr’ was not declared in this scope
+    printf("%d", logic_adrr[i]);
+                 ^
+make: *** [memorysystem.o] Error 1
+10:48:19 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:48:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:48:49 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+10:49:56 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:29:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:29:26 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:30:38 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:41:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:57:46 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:58:46 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:58:48 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+12:59:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:01:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:02:10 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:02:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:02:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:05:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:06:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:06:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:08:42 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:08:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:10:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:11:10 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:11:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:12:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:14:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:14:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:14:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:15:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:16:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:17:08 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+13:26:15 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:84:3: error: ‘USE_LRU’ was not declared in this scope
+   USE_LRU = true;
+   ^
+memorysystem.cpp:86:3: error: ‘USE_LRU’ was not declared in this scope
+   USE_LRU = false;
+   ^
+make: *** [memorysystem.o] Error 1
+13:26:41 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+14:03:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:50:70: error: expected constructor, destructor, or type conversion before ‘;’ token
+ GetPhysicalAddress(int frame_num, int offset, int * physical_address);
+                                                                      ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:142:57: error: ‘GetPhysicalAddress’ was not declared in this scope
+   GetPhysicalAddress(frame_num, offset, physical_address);
+                                                         ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+memorysystem.cpp:143:60: error: too many arguments to function ‘int GetByteFromFrame(int, int)’
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:51:5: note: declared here
+ int GetByteFromFrame(int frame_num, int byte);
+     ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:168:69: error: ISO C++ forbids declaration of ‘GetPhysicalAddress’ with no type [-fpermissive]
+ GetPhysicalAddress(int frame_num, int offset, int * physical_address) {
+                                                                     ^
+make: *** [memorysystem.o] Error 1
+14:03:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:50:70: error: expected constructor, destructor, or type conversion before ‘;’ token
+ GetPhysicalAddress(int frame_num, int offset, int * physical_address);
+                                                                      ^
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:142:57: error: ‘GetPhysicalAddress’ was not declared in this scope
+   GetPhysicalAddress(frame_num, offset, physical_address);
+                                                         ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+memorysystem.cpp:143:60: error: too many arguments to function ‘int GetByteFromFrame(int, int)’
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:51:5: note: declared here
+ int GetByteFromFrame(int frame_num, int byte);
+     ^
+memorysystem.cpp: At global scope:
+memorysystem.cpp:168:69: error: ISO C++ forbids declaration of ‘GetPhysicalAddress’ with no type [-fpermissive]
+ GetPhysicalAddress(int frame_num, int offset, int * physical_address) {
+                                                                     ^
+make: *** [memorysystem.o] Error 1
+14:07:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:142:58: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+   physical_address = GetPhysicalAddress(frame_num, offset);
+                                                          ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:50:5: error:   initializing argument 1 of ‘int GetPhysicalAddress(int, int)’ [-fpermissive]
+ int GetPhysicalAddress(int frame_num, int offset);
+     ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: too many arguments to function ‘int GetByteFromFrame(int, int)’
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:51:5: note: declared here
+ int GetByteFromFrame(int frame_num, int byte);
+     ^
+make: *** [memorysystem.o] Error 1
+14:34:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:142:58: error: invalid conversion from ‘int*’ to ‘int’ [-fpermissive]
+   physical_address = GetPhysicalAddress(frame_num, offset);
+                                                          ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:50:5: error:   initializing argument 1 of ‘int GetPhysicalAddress(int, int)’ [-fpermissive]
+ int GetPhysicalAddress(int frame_num, int offset);
+     ^
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: too many arguments to function ‘int GetByteFromFrame(int, int)’
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:51:5: note: declared here
+ int GetByteFromFrame(int frame_num, int byte);
+     ^
+make: *** [memorysystem.o] Error 1
+14:34:55 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: too many arguments to function ‘int GetByteFromFrame(int, int)’
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:51:5: note: declared here
+ int GetByteFromFrame(int frame_num, int byte);
+     ^
+make: *** [memorysystem.o] Error 1
+14:36:30 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:143:60: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+memorysystem.cpp:143:60: error: cannot convert ‘int*’ to ‘physical_memory_t*’ for argument ‘3’ to ‘int GetByteFromFrame(int, int, physical_memory_t*)’
+make: *** [memorysystem.o] Error 1
+14:37:02 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+14:44:49 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:04:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:09 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:28 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:08:36 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:23:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:24:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:25:12 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+15:26:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

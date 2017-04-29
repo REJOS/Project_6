@@ -17,11 +17,12 @@
  * Define Constants
  */
 #define BUFFER_SIZE 256
-#define MAX_ADDRESSES 100
+#define MAX_ADDRESSES 10000
 
-const char * IN_FILE = "input.txt";
+const char * IN_FILE = "InputFile.txt";
 const char * DISK_FILE = "BACKING_STORE";
-bool USE_LRU;
+bool USE_FIFO;
+bool SHOW_PHYSICAL_ADDRESS;
 
 /*
  * Function: main()
@@ -31,13 +32,14 @@ bool USE_LRU;
  */
 int main() {
 
-	const char *delimiters = ", ";
+	const char *delimiters = ", \n\r";
 	char buffer[BUFFER_SIZE];
 	char *last_addr;
 	int logic_addr[MAX_ADDRESSES];
 	int i = 0;
 	int num_addr;
 	int result;
+	char answer[50];
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
@@ -55,13 +57,34 @@ int main() {
 		// Populate array with logical address from file
 		while (last_addr != NULL) {
 			logic_addr[i] = atoi(last_addr);
-			//printf("%d", logic_adrr[i]);
 			last_addr = strtok(NULL, delimiters);
 			i++;
 		};
 	}
 	num_addr = i; // Number of address
 	fclose(input); // Close the input file
+
+	do {
+		printf("Display Physical Addresses? [yes | no]: ");
+		scanf("%s", answer);
+	} while (strcmp(answer, "yes") != 0 && strcmp(answer, "no") != 0);
+
+	if (strcmp(answer, "yes") == 0) {
+		SHOW_PHYSICAL_ADDRESS = true;
+	} else {
+		SHOW_PHYSICAL_ADDRESS = false;
+	}
+
+	do {
+		printf("Choose TLB Replacement Strategy [1: FIFO, 2: LRU]: ");
+		scanf("%s", answer);
+	} while (strcmp(answer, "1") != 0 && strcmp(answer, "2") != 0);
+
+	if (strcmp(answer, "1")) {
+		USE_FIFO = true;
+	} else {
+		USE_FIFO = false;
+	}
 
 	tlb_t ** tlb = (tlb_t **) malloc(sizeof(tlb_t *)); // Create a tlb
 	result = CreateTLB(tlb); // Create a TLB
@@ -97,25 +120,44 @@ int main() {
 		return -1;
 	}
 
-	int * frame = (int *) malloc(sizeof(int));
-	bool *hit = (bool *) malloc(sizeof(bool));
+	int * frame_num = (int *) malloc(sizeof(int));
+	int * byte = (int *) malloc(sizeof(int));
+	bool * hit = (bool *) malloc(sizeof(bool));
+	int physical_address;
+	int tlb_hit_counter = 0;
+	int page_fault_counter = 0;
 
 	// Obtain the page number and offset for each address,
 	// then search for them in the page table.
 	for (i = 0; i < num_addr; i++) {
-		int page_num = ParsePageNum(logic_addr[i]);
+		int page_num = ParsePageOrFrameNum(logic_addr[i]);
 		int offset = ParseOffset(logic_addr[i]);
 		*hit = false;
 		//SearchTLB(page_num, tlb, hit, frames);
 		if (*hit == false) {
-			SearchPageTable(page_num, frame, *page_table, hit);
+			SearchPageTable(page_num, frame_num, *page_table, hit);
 			if (*hit == false) {
-				printf("no hit for %d\n", page_num);
-				PageFaultHandler(page_num, frame, *physical_memory, *page_table,
+				PageFaultHandler(page_num, frame_num, *physical_memory, *page_table,
 						*tlb);
+				page_fault_counter++;
 			}
+		} else {
+			tlb_hit_counter++;
 		}
+		physical_address = GetPhysicalAddress(*frame_num, offset);
+		GetByteFromFrame(physical_address, *physical_memory, byte);
+		printf("Virtual address: %d; ", logic_addr[i]);
+		if (SHOW_PHYSICAL_ADDRESS) {
+			printf("Physical address: %d; ", physical_address);
+		}
+		printf("Value: %d\n", *byte);
 	}
+
+	double tlb_hit_rate = (double) tlb_hit_counter / num_addr;
+	double page_fault_rate = (double) page_fault_counter / num_addr;
+
+	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
+	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);
 
 	return 0;
 }
@@ -136,6 +178,16 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
 	(*physical_memory)->size = 0;
 
+	return 0;
+}
+
+int GetPhysicalAddress(int frame_num, int offset) {
+	return (frame_num << PAGE_SHIFT) + offset;
+}
+
+int GetByteFromFrame(int physical_address,
+		physical_memory_t *physical_memory, int *byte) {
+	*byte = *(physical_memory->frame[ParsePageOrFrameNum(physical_address)] + ParseOffset(physical_address));
 	return 0;
 }
 
@@ -174,17 +226,17 @@ int CreateTLB(tlb_t **tlb) {
  */
 int SearchTLB(int page_num, int *frame_num, tlb_t * tlb, bool *is_tlb_hit) {
 
-	if (tlb->size > 0) {
-		for (int i = 0; i < tlb->size; i++) {
-			if (tlb->list[i]->page_num == page_num) {
-				*is_tlb_hit = true;
-				*frame_num = tlb->list[i]->frame_num;
-				return 0;
-			}
-		}
-	}
-	*is_tlb_hit = false;
-	*frame_num = 0;
+//	if (tlb->size > 0) {
+//		for (int i = 0; i < tlb->size; i++) {
+//			if (tlb->list[i]->page_num == page_num) {
+//				*is_tlb_hit = true;
+//				*frame_num = tlb->list[i]->frame_num;
+//				return 0;
+//			}
+//		}
+//	}
+//	*is_tlb_hit = false;
+//	*frame_num = 0;
 
 	return 0;
 }
@@ -287,8 +339,8 @@ int PageFaultHandler(int page_num, int * frame_num,
  *              returns the page number of the
  *              address.
  */
-int ParsePageNum(int logical_addr) {
-	return (logical_addr & PAGE_MASK) >> PAGE_SHIFT;
+int ParsePageOrFrameNum(int logical_addr) {
+	return (logical_addr & PAGE_OR_FRAME_MASK) >> PAGE_SHIFT;
 }
 
 /*
