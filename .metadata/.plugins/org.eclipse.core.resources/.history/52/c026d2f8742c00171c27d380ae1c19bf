@@ -17,19 +17,17 @@
 #define PAGE_SHIFT 8
 
 typedef struct {
-    int page_num;
-    int frame_num;
-    tlb_entry_t * next;
-    //bool valid;
+	int page_num;
+	int frame_num;
+	int age;
+	//bool valid;
 } tlb_entry_t;
 
 typedef struct {
-    int size;
-    tlb_entry_t * head;
-    tlb_entry_t * tail;
-    //u_int_t rem_next;
+	tlb_entry_t * list[TLB_SIZE];
+	int size;
+	//u_int_t rem_next;
 } tlb_t;
-
 
 typedef struct {
 	int page_to_frame[NUM_PAGES];
