@@ -46,7 +46,6 @@ int ParseOffset(int logical_addr);
 int CreateTLB(tlb_t **tlb);
 int SearchTLB(int page_num, int *frame_num, tlb_t *tlb, bool *is_tlb_hit);
 
-int CreatePhysicalMemory(physical_memory_t **physical_memory);
 int CreatePageTable(page_table_t **page_table);
 int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
 int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb);

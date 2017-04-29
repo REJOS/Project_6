@@ -2285,3 +2285,35 @@ memorysystem.cpp:175:23: error: ‘struct tlb_t’ has no member named ‘list�
      *frame_num = tlb->list[i]->frame_num;
                        ^
 make: *** [memorysystem.o] Error 1
+20:18:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:19:28 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:21:45 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:81:47: error: ‘CreatePhysicalMemory’ was not declared in this scope
+  result = CreatePhysicalMemory(physical_memory);
+                                               ^
+make: *** [memorysystem.o] Error 1
+20:22:35 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:81:47: error: ‘CreatePhysicalMemory’ was not declared in this scope
+  result = CreatePhysicalMemory(physical_memory);
+                                               ^
+make: *** [memorysystem.o] Error 1
+20:23:43 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:26:58 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

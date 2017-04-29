@@ -1,14 +1,7 @@
-20:10:38 **** Incremental Build of configuration Default for project MemorySystem ****
+20:26:58 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
 g++ -c -g memorysystem.cpp
-memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
-memorysystem.cpp:173:13: error: ‘struct tlb_t’ has no member named ‘list’
-    if (tlb->list[i]->page_num == page_num) {
-             ^
-memorysystem.cpp:175:23: error: ‘struct tlb_t’ has no member named ‘list’
-     *frame_num = tlb->list[i]->frame_num;
-                       ^
-make: *** [memorysystem.o] Error 1
+g++ -g -o Debug/MemorySystem memorysystem.o
 
-20:10:38 Build Finished (took 127ms)
+20:26:59 Build Finished (took 275ms)
 

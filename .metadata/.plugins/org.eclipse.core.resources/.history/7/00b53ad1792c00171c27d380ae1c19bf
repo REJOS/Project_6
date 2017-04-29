@@ -78,12 +78,6 @@ int main() {
 		return -1;
 	}
 
-	result = CreatePhysicalMemory(physical_memory);
-	if (result) {
-		printf("Error: Could not create physical memory.");
-		return -1;
-	}
-
 	page_table_t ** page_table;
 	page_table = (page_table_t **) malloc(sizeof(page_table_t *)); // Create a page table
 
@@ -127,6 +121,7 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
 	if ((*physical_memory) == NULL) {
 		return -1;
+		printf("%d\n", *physical_memory);
 	}
 
 	int i;
