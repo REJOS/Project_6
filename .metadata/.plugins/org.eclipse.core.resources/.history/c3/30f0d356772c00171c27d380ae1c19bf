@@ -16,10 +16,10 @@
 #define OFFSET_MASK 0b00000000000000000000000011111111
 #define PAGE_SHIFT 8
 
-typedef struct tlb_entry {
+typedef struct {
     int page_num;
     int frame_num;
-    struct tlb_entry * next;
+    tlb_entry_t * next;
     //bool valid;
 } tlb_entry_t;
 
@@ -53,6 +53,5 @@ int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb);
 
-int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent);
 
 #endif /* MEMORYSYSTEM_H_ */

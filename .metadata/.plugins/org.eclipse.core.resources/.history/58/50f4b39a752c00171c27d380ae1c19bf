@@ -71,8 +71,7 @@ int main() {
 	}
 
 	physical_memory_t ** physical_memory;
-	physical_memory = (physical_memory_t **) malloc(
-			sizeof(physical_memory_t *)); // Create a page table
+	physical_memory = (physical_memory_t **) malloc(sizeof(physical_memory_t *)); // Create a page table
 
 	if (physical_memory == NULL) {
 		return -1;
@@ -105,8 +104,7 @@ int main() {
 			SearchPageTable(page_num, frame, *page_table, hit);
 			if (*hit == false) {
 				printf("no hit for %d\n", page_num);
-				PageFaultHandler(page_num, frame, *physical_memory, *page_table,
-						*tlb);
+				PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
 			}
 		}
 	}
@@ -116,8 +114,7 @@ int main() {
 
 int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
-	(*physical_memory) = (physical_memory_t *) malloc(
-			sizeof(physical_memory_t));
+	(*physical_memory) = (physical_memory_t *) malloc(sizeof(physical_memory_t));
 
 	if ((*physical_memory) == NULL) {
 		return -1;
@@ -127,8 +124,6 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 	for (i = 0; i < NUM_PAGES; i++) {
 		(*physical_memory)->frame[i] = NULL;
 	}
-
-	(*physical_memory)->size = 0;
 
 	return 0;
 }
@@ -149,7 +144,7 @@ int CreateTLB(tlb_t **tlb) {
 
 	int i;
 	for (i = 0; i < TLB_SIZE; i++) {
-//		(*tlb)->list[i] = NULL;
+		(*tlb)->list[i] = NULL;
 	}
 
 	(*tlb)->size = 0;
@@ -239,9 +234,7 @@ int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
  * Return Type: int
  * Description:
  */
-int PageFaultHandler(int page_num, int * frame_num,
-		physical_memory_t * physical_memory, page_table_t *page_table,
-		tlb_t *tlb) {
+int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb) {
 
 	char * frame = (char *) malloc(sizeof(char) * PAGE_SIZE);
 
@@ -297,57 +290,56 @@ int ParseOffset(int logical_addr) {
 }
 
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
-	tlb_entry_t ** ent;
-	tlb_entry_t * del;
-	CreateEntry(page_num, frame_num, ent);
+    struct tlb_entry_t * ent;
+    struct tlb_entry_t * del;
+    CreateEntry(page_num, frame_num, ent);
 
-	if (tlb->size == 0) {
-		tlb->head = (*ent);
-		tlb->tail = (*ent);
-		tlb->size++;
-		return 0;
-	}
+    if(tlb->size == 0){
+        tlb->head = ent;
+        tlb->tail = ent;
+        tlb->size++;
+        return 0;
+    }
 
-	if (tlb->size == TLB_SIZE) {
-		del = tlb->head;
-		tlb->head = tlb->head->next;
-		tlb->tail->next = (*ent);
-		tlb->tail = tlb->tail->next;
-		free(del);
-		return 0;
-	}
+    if(tlb->size == TLB_SIZE){
+        del = tlb->head;
+        tlb->head = tlb->head->next;
+        tlb->tail->next = ent;
+        tlb->tail=tlb->tail->next;
+        free(del);
+        return 0;
+    }
 
-	tlb->tail->next = (*ent);
-	tlb->tail = tlb->tail->next;
-	tlb->size++;
-	return 0;
+    tlb->tail->next=ent;
+    tlb->tail=tlb->tail->next;
+    tlb->size++;
+    return 0;
 }
 
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
-	tlb_entry_t * curr;
-	tlb_entry_t * del;
-	curr = tlb->head;
-	if (tlb->size > 0) {
-		while (curr->next != NULL) {
-			if (curr->next->page_num == page_num
-					&& curr->next->frame_num == frame_num) {
-				del = curr->next;
-				curr->next = curr->next->next;
-				free(del);
-				tlb->size--;
-			}
-		}
-	}
+    struct tlb_entry_t * curr;
+    struct tlb_entry_t * del;
+    curr = tlb->head;
+    if(tlb->size > 0){
+        while(curr->next!=NULL){
+            if(curr->next->page_num==page_num && curr->next->frame_num==frame_num){
+                del = curr->next;
+                curr->next=curr->next->next;
+                free(del);
+                tlb->size--;
+            }
+        }
+    }
 
-	TLB_replacement_FIFO(page_num, frame_num, tlb);
-	return 0;
+    TLB_replacement_FIFO(page_num, frame_num, tlb);
+    return 0;
 }
 
-int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent) {
-	(*ent) = (tlb_entry_t*) malloc(sizeof(tlb_entry_t));
-	(*ent)->frame_num = frame_num;
-	(*ent)->page_num = page_num;
-	(*ent)->next = NULL;
-	return 0;
+int CreateEntry(int page_num, int frame_num, tlb_entry_t *ent){
+    *ent = (tlb_entry_t)malloc(sizeof(tlb_entry_t));
+    ent->frame_num=frame_num;
+    ent->page_num=page_num;
+    ent->next=NULL;
+    return 0;
 }
 

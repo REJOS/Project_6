@@ -53,6 +53,5 @@ int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb);
 
-int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent);
 
 #endif /* MEMORYSYSTEM_H_ */

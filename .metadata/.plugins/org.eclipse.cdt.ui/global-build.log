@@ -2087,3 +2087,201 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+19:58:57 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:22:5: error: ‘tlb_entry_t’ does not name a type
+     tlb_entry_t * next;
+     ^
+memorysystem.cpp: In function ‘int CreateTLB(tlb_t**)’:
+memorysystem.cpp:150:11: error: ‘struct tlb_t’ has no member named ‘list’
+   (*tlb)->list[i] = NULL;
+           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:171:13: error: ‘struct tlb_t’ has no member named ‘list’
+    if (tlb->list[i]->page_num == page_num) {
+             ^
+memorysystem.cpp:173:23: error: ‘struct tlb_t’ has no member named ‘list’
+     *frame_num = tlb->list[i]->frame_num;
+                       ^
+memorysystem.cpp: In function ‘int TLB_replacement_FIFO(int, int, tlb_t*)’:
+memorysystem.cpp:298:9: error: using typedef-name ‘tlb_entry_t’ after ‘struct’
+  struct tlb_entry_t * ent;
+         ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: ‘tlb_entry_t’ has a previous declaration here
+ } tlb_entry_t;
+   ^
+memorysystem.cpp:298:26: error: invalid type in declaration before ‘;’ token
+  struct tlb_entry_t * ent;
+                          ^
+memorysystem.cpp:299:9: error: using typedef-name ‘tlb_entry_t’ after ‘struct’
+  struct tlb_entry_t * del;
+         ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: ‘tlb_entry_t’ has a previous declaration here
+ } tlb_entry_t;
+   ^
+memorysystem.cpp:299:26: error: invalid type in declaration before ‘;’ token
+  struct tlb_entry_t * del;
+                          ^
+memorysystem.cpp:300:38: error: ‘CreateEntry’ was not declared in this scope
+  CreateEntry(page_num, frame_num, ent);
+                                      ^
+memorysystem.cpp:303:13: error: cannot convert ‘int*’ to ‘tlb_entry_t*’ in assignment
+   tlb->head = ent;
+             ^
+memorysystem.cpp:304:13: error: cannot convert ‘int*’ to ‘tlb_entry_t*’ in assignment
+   tlb->tail = ent;
+             ^
+memorysystem.cpp:310:7: error: cannot convert ‘tlb_entry_t*’ to ‘int*’ in assignment
+   del = tlb->head;
+       ^
+memorysystem.cpp:311:26: error: ‘struct tlb_entry_t’ has no member named ‘next’
+   tlb->head = tlb->head->next;
+                          ^
+memorysystem.cpp:312:14: error: ‘struct tlb_entry_t’ has no member named ‘next’
+   tlb->tail->next = ent;
+              ^
+memorysystem.cpp:313:26: error: ‘struct tlb_entry_t’ has no member named ‘next’
+   tlb->tail = tlb->tail->next;
+                          ^
+memorysystem.cpp:318:13: error: ‘struct tlb_entry_t’ has no member named ‘next’
+  tlb->tail->next = ent;
+             ^
+memorysystem.cpp:319:25: error: ‘struct tlb_entry_t’ has no member named ‘next’
+  tlb->tail = tlb->tail->next;
+                         ^
+memorysystem.cpp: In function ‘int TLB_replacement_LRU(int, int, tlb_t*)’:
+memorysystem.cpp:325:9: error: using typedef-name ‘tlb_entry_t’ after ‘struct’
+  struct tlb_entry_t * curr;
+         ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: ‘tlb_entry_t’ has a previous declaration here
+ } tlb_entry_t;
+   ^
+memorysystem.cpp:325:27: error: invalid type in declaration before ‘;’ token
+  struct tlb_entry_t * curr;
+                           ^
+memorysystem.cpp:326:9: error: using typedef-name ‘tlb_entry_t’ after ‘struct’
+  struct tlb_entry_t * del;
+         ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: ‘tlb_entry_t’ has a previous declaration here
+ } tlb_entry_t;
+   ^
+memorysystem.cpp:326:26: error: invalid type in declaration before ‘;’ token
+  struct tlb_entry_t * del;
+                          ^
+memorysystem.cpp:327:7: error: cannot convert ‘tlb_entry_t*’ to ‘int*’ in assignment
+  curr = tlb->head;
+       ^
+memorysystem.cpp:329:16: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+   while (curr->next != NULL) {
+                ^
+memorysystem.cpp:330:14: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+    if (curr->next->page_num == page_num
+              ^
+memorysystem.cpp:331:15: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+      && curr->next->frame_num == frame_num) {
+               ^
+memorysystem.cpp:332:17: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+     del = curr->next;
+                 ^
+memorysystem.cpp:333:11: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+     curr->next = curr->next->next;
+           ^
+memorysystem.cpp:333:24: error: request for member ‘next’ in ‘* curr’, which is of non-class type ‘int’
+     curr->next = curr->next->next;
+                        ^
+memorysystem.cpp: In function ‘int CreateEntry(int, int, tlb_entry_t*)’:
+memorysystem.cpp:345:49: error: no matching function for call to ‘tlb_entry_t::tlb_entry_t(void*)’
+  *ent = (tlb_entry_t) malloc(sizeof(tlb_entry_t));
+                                                 ^
+memorysystem.cpp:345:49: note: candidates are:
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:24:3: note: tlb_entry_t::tlb_entry_t()
+ } tlb_entry_t;
+   ^
+memorysystem.h:24:3: note:   candidate expects 0 arguments, 1 provided
+memorysystem.h:24:3: note: tlb_entry_t::tlb_entry_t(const tlb_entry_t&)
+memorysystem.h:24:3: note:   no known conversion for argument 1 from ‘void*’ to ‘const tlb_entry_t&’
+memorysystem.cpp:348:7: error: ‘struct tlb_entry_t’ has no member named ‘next’
+  ent->next = NULL;
+       ^
+make: *** [memorysystem.o] Error 1
+20:00:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:22:5: error: ‘tlb_entry_t’ does not name a type
+     tlb_entry_t * next;
+     ^
+memorysystem.cpp: In function ‘int CreateTLB(tlb_t**)’:
+memorysystem.cpp:150:11: error: ‘struct tlb_t’ has no member named ‘list’
+   (*tlb)->list[i] = NULL;
+           ^
+make: *** [memorysystem.o] Error 1
+20:00:28 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:22:5: error: ‘tlb_entry_t’ does not name a type
+     tlb_entry_t * next;
+     ^
+make: *** [memorysystem.o] Error 1
+20:00:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:22:5: error: ‘tlb_entry_t’ does not name a type
+     tlb_entry_t * next;
+     ^
+make: *** [memorysystem.o] Error 1
+20:01:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:02:47 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:05:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:06:54 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:07:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:09:42 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:173:13: error: ‘struct tlb_t’ has no member named ‘list’
+    if (tlb->list[i]->page_num == page_num) {
+             ^
+memorysystem.cpp:175:23: error: ‘struct tlb_t’ has no member named ‘list’
+     *frame_num = tlb->list[i]->frame_num;
+                       ^
+memorysystem.cpp: In function ‘int TLB_replacement_FIFO(int, int, tlb_t*)’:
+memorysystem.cpp:302:38: error: ‘CreateEntry’ was not declared in this scope
+  CreateEntry(page_num, frame_num, ent);
+                                      ^
+make: *** [memorysystem.o] Error 1
+20:10:38 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:173:13: error: ‘struct tlb_t’ has no member named ‘list’
+    if (tlb->list[i]->page_num == page_num) {
+             ^
+memorysystem.cpp:175:23: error: ‘struct tlb_t’ has no member named ‘list’
+     *frame_num = tlb->list[i]->frame_num;
+                       ^
+make: *** [memorysystem.o] Error 1
