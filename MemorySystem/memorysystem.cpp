@@ -225,21 +225,19 @@ int CreateTLB(tlb_t **tlb) {
  * Description:
  */
 int SearchTLB(int page_num, int *frame_num, tlb_t * tlb, bool *is_tlb_hit) {
-
-//	if (tlb->size > 0) {
-//		for (int i = 0; i < tlb->size; i++) {
-//			if (tlb->list[i]->page_num == page_num) {
-//				*is_tlb_hit = true;
-//				*frame_num = tlb->list[i]->frame_num;
-//				return 0;
-//			}
-//		}
-//	}
-//	*is_tlb_hit = false;
-//	*frame_num = 0;
-
+struct tlb_entry_t * curr;
+   curr = tlb->head;
+    if(tlb->size > 0){
+        while(curr!=NULL){
+            if(curr->page_num==page_num){
+		*frame_num = curr->frame_num;
+		*is_tlb_hit = true;
+		return 0;
+		}
+	}
+	*is_tlb_hit = false;
 	return 0;
-}
+	}
 
 /*
  * Function: CreatePageTable()
