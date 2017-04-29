@@ -171,6 +171,12 @@ int main() {
 	return 0;
 }
 
+/*
+ * Function: CreatePhysicalMemory()
+ * Parameters: physical_memory_t **physical_memory
+ * Return Type: int
+ * Description:
+ */
 int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
 	(*physical_memory) = (physical_memory_t *) malloc(
@@ -190,6 +196,13 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 	return 0;
 }
 
+/*
+ * Function: GetPhysicalAddress()
+ * Parameters: int frame_num
+ *             int offset
+ * Return Type: int
+ * Description:
+ */
 int GetPhysicalAddress(int frame_num, int offset) {
 	return (frame_num << PAGE_SHIFT) + offset;
 }
@@ -203,7 +216,7 @@ int GetByteFromFrame(int physical_address, physical_memory_t *physical_memory,
 
 /*
  * Function: CreateTLB()
- * Parameters: tlb_t *tlb
+ * Parameters: tlb_t **tlb
  * Return Type: int
  * Description:
  */
@@ -224,10 +237,10 @@ int CreateTLB(tlb_t **tlb) {
 
 /*
  * Function: SearchTLB()
- * Parameters: u_int_t page_num
+ * Parameters: int page_num
+ *             int *frame_num
  *             tlb_t * tlb
  *             bool *is_tlb_hit
- *             char **frames
  * Return Type: int
  * Description:
  */
@@ -272,10 +285,10 @@ int CreatePageTable(page_table_t **page_table) {
 
 /*
  * Function: SearchPageTable()
- * Parameters: u_int_t page_num
+ * Parameters: int page_num
+ *             int *frame_num
  *             page_table_t * page_table
- bool *is_page_hit
- char **frames
+ *             bool *is_page_hit
  * Return Type: int
  * Description:
  */
@@ -297,10 +310,11 @@ int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
 
 /*
  * Function: PageFaultHandler()
- * Parameters: u_int_t page_num
- const char * phys_mem_filename
- page_table_t *page_table
- tlb_t *tlb
+ * Parameters: int page_num
+ *             int * frame_num
+ *             physical_memory_t * physcial_memory
+ *             page_table_t *page_table
+ *             tlb_t *tlb
  * Return Type: int
  * Description:
  */
@@ -340,8 +354,8 @@ int PageFaultHandler(int page_num, int * frame_num,
 
 /*
  * Function: ParsePageNum()
- * Parameters: u_int_t logical_addr
- * Return Type: u_int_t
+ * Parameters: int logical_addr
+ * Return Type: int
  * Description: Take the logical address and
  *              returns the page number of the
  *              address.
@@ -352,8 +366,8 @@ int ParsePageOrFrameNum(int logical_addr) {
 
 /*
  * Function: ParseOffset()
- * Parameters: u_int_t logical_addr
- * Return Type: u_int_t
+ * Parameters: int logical_addr
+ * Return Type: int
  * Description: Takes the logical address and
  *              returns the offset of the address.
  */
@@ -361,6 +375,14 @@ int ParseOffset(int logical_addr) {
 	return (logical_addr & OFFSET_MASK);
 }
 
+/*
+ * Function: TLB_replacement_FIFO()
+ * Parameters: int page_num
+ *             int frame_num
+ *             tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t ** ent;
 	tlb_entry_t * del;
@@ -388,6 +410,14 @@ int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
 	return 0;
 }
 
+/*
+ * Function: TLB_replacement_LRU()
+ * Parameters: int page_num
+ *             int frame_num
+ *             tlb_t *tlb
+ * Return Type: int
+ * Description:
+ */
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t * curr;
 	tlb_entry_t * del;
@@ -413,6 +443,14 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	return 0;
 }
 
+/*
+ * Function: CreateEntry()
+ * Parameters: int page_num
+ *             int frame_num
+ *             tlb_entry_t **ent
+ * Return Type: int
+ * Description:
+ */
 int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent) {
 	(*ent) = (tlb_entry_t*) malloc(sizeof(tlb_entry_t));
 	(*ent)->frame_num = frame_num;
