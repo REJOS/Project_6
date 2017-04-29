@@ -102,10 +102,10 @@ int main() {
 		//SearchTLB(page_num, tlb, hit, frames);
 		if (*hit == false) {
 			SearchPageTable(page_num, frame, *page_table, hit);
-			if (*hit == false) {
-				printf("no hit for %d\n", page_num);
-				//PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
-			}
+//			if (*hit == false) {
+//				printf("no hit for %d\n", page_num);
+//				PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
+//			}
 		}
 	}
 

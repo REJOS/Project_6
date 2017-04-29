@@ -31,21 +31,21 @@ typedef struct {
 
 typedef struct {
 	int page_to_frame[NUM_PAGES];
+	int size;
 } page_table_t;
 
 typedef struct {
 	char * frame[NUM_PAGES];
-	int size;
 } physical_memory_t;
 
 int ParsePageNum(int logical_addr);
 int ParseOffset(int logical_addr);
 
 int CreateTLB(tlb_t **tlb);
-int SearchTLB(int page_num, int *frame_num, tlb_t *tlb, bool *is_tlb_hit);
+int SearchTLB(int page_num, int frame_num, tlb_t *tlb, bool *is_tlb_hit);
 
 int CreatePageTable(page_table_t **page_table);
-int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
+int SearchPageTable(int page_num, page_table_t * page_table, bool *is_page_hit, char **frames);
 int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb);
 
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);

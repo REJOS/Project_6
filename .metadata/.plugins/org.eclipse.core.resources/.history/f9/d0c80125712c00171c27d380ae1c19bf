@@ -104,7 +104,7 @@ int main() {
 			SearchPageTable(page_num, frame, *page_table, hit);
 			if (*hit == false) {
 				printf("no hit for %d\n", page_num);
-				//PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
+				PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
 			}
 		}
 	}
@@ -122,7 +122,10 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
 	int i;
 	for (i = 0; i < NUM_PAGES; i++) {
-		(*physical_memory)->frame[i] = NULL;
+		(*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+		if ((*physical_memory)->list[i] == NULL) {
+			return -1;
+		}
 	}
 
 	return 0;
@@ -234,7 +237,7 @@ int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
  * Return Type: int
  * Description:
  */
-int PageFaultHandler(int page_num, int *frame_num, physical_memory_t * physical_memory,
+int PageFaultHandler(int page_num, int frame_num, physical_memory_t * physical_memory,
 		page_table_t *page_table, tlb_t *tlb) {
 
 	char * frame = (char *) malloc(sizeof(char) * PAGE_SIZE);
@@ -256,13 +259,9 @@ int PageFaultHandler(int page_num, int *frame_num, physical_memory_t * physical_
 
 	fclose(disk);
 
-	*frame_num = physical_memory->size;
+	page_table->page_to_frame[page_num] = ;
 
-	physical_memory->frame[*frame_num] = frame;
-
-	page_table->page_to_frame[page_num] = *frame_num;
-
-	*frame_num = physical_memory->size++;
+	*frames = page_table->list[page_num]->frames;
 
 	return 0;
 }

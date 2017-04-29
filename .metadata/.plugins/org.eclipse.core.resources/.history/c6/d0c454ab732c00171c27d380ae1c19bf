@@ -104,7 +104,7 @@ int main() {
 			SearchPageTable(page_num, frame, *page_table, hit);
 			if (*hit == false) {
 				printf("no hit for %d\n", page_num);
-				//PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
+				PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
 			}
 		}
 	}

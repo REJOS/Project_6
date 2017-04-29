@@ -104,7 +104,7 @@ int main() {
 			SearchPageTable(page_num, frame, *page_table, hit);
 			if (*hit == false) {
 				printf("no hit for %d\n", page_num);
-				//PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
+				PageFaultHandler(page_num, frame, *physical_memory, *page_table, *tlb);
 			}
 		}
 	}
@@ -122,7 +122,7 @@ int CreatePhysicalMemory(physical_memory_t **physical_memory) {
 
 	int i;
 	for (i = 0; i < NUM_PAGES; i++) {
-		(*physical_memory)->frame[i] = NULL;
+		physical_memory->list[i] = NULL;
 	}
 
 	return 0;

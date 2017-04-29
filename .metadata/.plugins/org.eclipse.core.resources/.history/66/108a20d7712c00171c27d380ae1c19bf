@@ -31,11 +31,11 @@ typedef struct {
 
 typedef struct {
 	int page_to_frame[NUM_PAGES];
+	int size;
 } page_table_t;
 
 typedef struct {
 	char * frame[NUM_PAGES];
-	int size;
 } physical_memory_t;
 
 int ParsePageNum(int logical_addr);

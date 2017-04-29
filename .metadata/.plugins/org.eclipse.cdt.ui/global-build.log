@@ -1800,3 +1800,290 @@ memorysystem.cpp:261:24: error: ‘struct page_table_t’ has no member named �
   *frames = page_table->list[page_num]->frames;
                         ^
 make: *** [memorysystem.o] Error 1
+19:04:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:106:75: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+     PageFaultHandler(page_num, *physical_memory, *page_table, *tlb, frames);
+                                                                           ^
+memorysystem.cpp:106:75: error: cannot convert ‘page_table_t*’ to ‘const char*’ for argument ‘3’ to ‘int PageFaultHandler(int, int, const char*, page_table_t*, tlb_t*)’
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:124:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:125:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:172:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:172:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:177:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:260:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:262:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:262:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:05:33 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:106:75: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+     PageFaultHandler(page_num, *physical_memory, *page_table, *tlb, frames);
+                                                                           ^
+memorysystem.cpp:106:75: error: cannot convert ‘page_table_t*’ to ‘physical_memory_t*’ for argument ‘3’ to ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:124:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:125:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:172:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:172:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:177:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:260:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:262:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:262:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:05:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:106:75: error: invalid conversion from ‘physical_memory_t*’ to ‘int’ [-fpermissive]
+     PageFaultHandler(page_num, *physical_memory, *page_table, *tlb, frames);
+                                                                           ^
+memorysystem.cpp:106:75: error: cannot convert ‘page_table_t*’ to ‘physical_memory_t*’ for argument ‘3’ to ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:124:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:125:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:172:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:172:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:177:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:260:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:262:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:262:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:09:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:105:61: error: too many arguments to function ‘int SearchPageTable(int, int*, page_table_t*, bool*)’
+    SearchPageTable(page_num, frame, *page_table, hit, frames);
+                                                             ^
+In file included from memorysystem.cpp:14:0:
+memorysystem.h:48:5: note: declared here
+ int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
+     ^
+memorysystem.cpp:108:32: error: expected primary-expression before ‘int’
+     PageFaultHandler(page_num, int frame *physical_memory, *page_table, *tlb, frames);
+                                ^
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:126:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:127:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:174:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:174:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:179:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:262:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:264:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:264:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:13:07 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:125:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:126:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int, tlb_t*, bool*)’:
+memorysystem.cpp:173:6: error: ‘frames’ was not declared in this scope
+     *frames = tlb->list[i]->frames;
+      ^
+memorysystem.cpp:173:29: error: ‘struct tlb_entry_t’ has no member named ‘frames’
+     *frames = tlb->list[i]->frames;
+                             ^
+memorysystem.cpp:178:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:261:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:263:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:263:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:15:20 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:125:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:126:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:173:6: error: ‘frame’ was not declared in this scope
+     *frame = tlb->list[i]->frame_num;
+      ^
+memorysystem.cpp:178:3: error: ‘frames’ was not declared in this scope
+  *frames = NULL;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:261:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:263:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:263:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:16:03 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:125:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:126:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int SearchTLB(int, int*, tlb_t*, bool*)’:
+memorysystem.cpp:173:6: error: ‘frame’ was not declared in this scope
+     *frame = tlb->list[i]->frame_num;
+      ^
+memorysystem.cpp:179:3: error: ‘frame’ was not declared in this scope
+  *frame = 0;
+   ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:262:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:264:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:264:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:16:25 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:125:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:126:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+memorysystem.cpp: In function ‘int PageFaultHandler(int, int, physical_memory_t*, page_table_t*, tlb_t*)’:
+memorysystem.cpp:262:40: error: expected primary-expression before ‘;’ token
+  page_table->page_to_frame[page_num] = ;
+                                        ^
+memorysystem.cpp:264:3: error: ‘frames’ was not declared in this scope
+  *frames = page_table->list[page_num]->frames;
+   ^
+memorysystem.cpp:264:24: error: ‘struct page_table_t’ has no member named ‘list’
+  *frames = page_table->list[page_num]->frames;
+                        ^
+make: *** [memorysystem.o] Error 1
+19:27:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int CreatePhysicalMemory(physical_memory_t**)’:
+memorysystem.cpp:125:23: error: ‘struct physical_memory_t’ has no member named ‘list’
+   (*physical_memory)->list[i] = (char *) malloc(sizeof(char *));
+                       ^
+memorysystem.cpp:126:27: error: ‘struct physical_memory_t’ has no member named ‘list’
+   if ((*physical_memory)->list[i] == NULL) {
+                           ^
+make: *** [memorysystem.o] Error 1
+19:32:39 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+19:33:13 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+19:33:17 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+19:34:56 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+19:35:11 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
