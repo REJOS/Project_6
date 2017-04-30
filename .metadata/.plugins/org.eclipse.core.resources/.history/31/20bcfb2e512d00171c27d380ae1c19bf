@@ -21,12 +21,14 @@ typedef struct tlb_entry {
 	int page_num;
 	int frame_num;
 	struct tlb_entry * next;
+	//bool valid;
 } tlb_entry_t;
 
 typedef struct {
 	int size;
 	tlb_entry_t * head;
 	tlb_entry_t * tail;
+	//u_int_t rem_next;
 } tlb_t;
 
 typedef struct {

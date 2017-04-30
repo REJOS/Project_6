@@ -18,16 +18,19 @@
 #define PAGE_SHIFT 8
 
 typedef struct tlb_entry {
-	int page_num;
-	int frame_num;
-	struct tlb_entry * next;
+    int page_num;
+    int frame_num;
+    struct tlb_entry * next;
+    //bool valid;
 } tlb_entry_t;
 
 typedef struct {
-	int size;
-	tlb_entry_t * head;
-	tlb_entry_t * tail;
+    int size;
+    tlb_entry_t * head;
+    tlb_entry_t * tail;
+    //u_int_t rem_next;
 } tlb_t;
+
 
 typedef struct {
 	int page_to_frame[NUM_PAGES];
@@ -46,15 +49,11 @@ int SearchTLB(int page_num, int *frame_num, tlb_t *tlb, bool *is_tlb_hit);
 
 int CreatePhysicalMemory(physical_memory_t **physical_memory);
 int GetPhysicalAddress(int frame_num, int offset);
-int GetByteFromFrame(int frame_num, physical_memory_t * physical_memory,
-		unsigned char * byte);
+int GetByteFromFrame(int frame_num, physical_memory_t * physical_memory, unsigned char * byte);
 
 int CreatePageTable(page_table_t **page_table);
-int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table,
-		bool *is_page_hit);
-int PageFaultHandler(int page_num, int * frame_num,
-		physical_memory_t * physical_memory, page_table_t *page_table,
-		tlb_t *tlb);
+int SearchPageTable(int page_num, int *frame_num, page_table_t * page_table, bool *is_page_hit);
+int PageFaultHandler(int page_num, int * frame_num, physical_memory_t * physical_memory, page_table_t *page_table, tlb_t *tlb);
 
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb);
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb);
