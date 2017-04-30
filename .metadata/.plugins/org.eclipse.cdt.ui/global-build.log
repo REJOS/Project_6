@@ -3000,3 +3000,78 @@ g++ -g -o Debug/MemorySystem memorysystem.o
 20:39:10 **** Incremental Build of configuration Default for project MemorySystem ****
 make all 
 g++ -g -o Debug/MemorySystem memorysystem.o
+20:43:21 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:43:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:44:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:45:00 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:45:18 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:49:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:50:35 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:52:44 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:52:52 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+20:53:05 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:06:43 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:07:00 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:09:06 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:10:40 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main()’:
+memorysystem.cpp:81:3: error: ‘SHOW_PHYSICAL_ADDRESS’ was not declared in this scope
+   SHOW_PHYSICAL_ADDRESS = true;
+   ^
+memorysystem.cpp:83:3: error: ‘SHOW_PHYSICAL_ADDRESS’ was not declared in this scope
+   SHOW_PHYSICAL_ADDRESS = false;
+   ^
+memorysystem.cpp:92:3: error: ‘USE_FIFO’ was not declared in this scope
+   USE_FIFO = true;
+   ^
+memorysystem.cpp:94:3: error: ‘USE_FIFO’ was not declared in this scope
+   USE_FIFO = false;
+   ^
+memorysystem.cpp:152:8: error: ‘USE_FIFO’ was not declared in this scope
+    if (USE_FIFO) {
+        ^
+memorysystem.cpp:162:8: error: ‘USE_FIFO’ was not declared in this scope
+   if (!USE_FIFO) {
+        ^
+memorysystem.cpp:168:7: error: ‘SHOW_PHYSICAL_ADDRESS’ was not declared in this scope
+   if (SHOW_PHYSICAL_ADDRESS) {
+       ^
+make: *** [memorysystem.o] Error 1
+21:11:50 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

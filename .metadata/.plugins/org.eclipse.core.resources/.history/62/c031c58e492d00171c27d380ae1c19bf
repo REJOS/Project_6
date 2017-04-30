@@ -21,6 +21,8 @@
 
 const char * IN_FILE = "InputFile.txt";
 const char * DISK_FILE = "BACKING_STORE";
+bool USE_FIFO;
+bool SHOW_PHYSICAL_ADDRESS;
 
 /*
  * Function: main()
@@ -38,8 +40,6 @@ int main() {
 	int num_addr;
 	int result;
 	char answer[50];
-	bool use_fifo;
-	bool show_physical_address;
 	FILE * input;
 	input = fopen(IN_FILE, "r");
 
@@ -78,9 +78,9 @@ int main() {
 	} while (strcmp(answer, "yes") != 0 && strcmp(answer, "no") != 0);
 
 	if (strcmp(answer, "yes") == 0) {
-		show_physical_address = true;
+		SHOW_PHYSICAL_ADDRESS = true;
 	} else {
-		show_physical_address = false;
+		SHOW_PHYSICAL_ADDRESS = false;
 	}
 
 	do {
@@ -89,9 +89,9 @@ int main() {
 	} while (strcmp(answer, "1") != 0 && strcmp(answer, "2") != 0);
 
 	if (strcmp(answer, "1") == 0) {
-		use_fifo = true;
+		USE_FIFO = true;
 	} else {
-		use_fifo = false;
+		USE_FIFO = false;
 	}
 
 	tlb_t ** tlb = (tlb_t **) malloc(sizeof(tlb_t *)); // Create a tlb
@@ -149,7 +149,7 @@ int main() {
 						*page_table, *tlb);
 				page_fault_counter++;
 			}
-			if (use_fifo) {
+			if (USE_FIFO) {
 				result = TLB_replacement_FIFO(page_num, *frame_num, *tlb);
 			}
 			if (result) {
@@ -159,16 +159,19 @@ int main() {
 		} else {
 			tlb_hit_counter++;
 		}
-		if (!use_fifo) {
+		if (!USE_FIFO) {
 			TLB_replacement_LRU(page_num, *frame_num, *tlb);
 		}
 		physical_address = GetPhysicalAddress(*frame_num, offset);
 		GetByteFromFrame(physical_address, *physical_memory, byte);
 		printf("Virtual address: %d; ", logic_addr[i]);
-		if (show_physical_address) {
+		if (SHOW_PHYSICAL_ADDRESS) {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
+		if (logic_addr[i] == 58584) {
+			printf("here");
+		}
 	}
 
 	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
@@ -437,21 +440,21 @@ int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
 int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t * curr;
 	tlb_entry_t * del;
+	int act_size = 0;
 	if (tlb->size > 0) {
 		curr = tlb->head;
 		if (curr->page_num == page_num) {
+			act_size++;
 			del = curr;
 			tlb->head = curr->next;
 			tlb->size--;
 			free(del);
 		} else {
 			while (curr->next != NULL) {
+				act_size++;
 				if (curr->next->page_num == page_num) {
 					del = curr->next;
 					curr->next = curr->next->next;
-					if(curr->next==NULL){
-						tlb->tail = curr;
-					}
 					tlb->size--;
 					free(del);
 					break;
@@ -461,6 +464,7 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 			}
 		}
 	}
+	printf("%d", act_size);
 
 	TLB_replacement_FIFO(page_num, frame_num, tlb);
 	return 0;
