@@ -19,7 +19,7 @@
 #define BUFFER_SIZE 256
 #define MAX_ADDRESSES 10000
 
-const char * IN_FILE = "InputFile.txt";
+const char * IN_FILE = "testinput.txt";
 const char * DISK_FILE = "BACKING_STORE";
 bool USE_FIFO;
 bool SHOW_PHYSICAL_ADDRESS;
@@ -165,8 +165,8 @@ int main() {
 		}
 	}
 
-	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
-	double page_fault_rate = ((double) page_fault_counter / num_addr) * 100.0;
+	double tlb_hit_rate = (double) tlb_hit_counter / num_addr;
+	double page_fault_rate = (double) page_fault_counter / num_addr;
 
 	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
 	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);

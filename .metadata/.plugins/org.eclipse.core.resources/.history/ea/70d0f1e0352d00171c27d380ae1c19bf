@@ -148,7 +148,7 @@ int main() {
 			}
 			if (result) {
 				printf("Error: could not update TLB");
-				return result;
+				return -1;
 			}
 		} else {
 			tlb_hit_counter++;
@@ -160,13 +160,10 @@ int main() {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
-		if (*byte == 59) {
-			printf("here");
-		}
 	}
 
-	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
-	double page_fault_rate = ((double) page_fault_counter / num_addr) * 100.0;
+	double tlb_hit_rate = (double) tlb_hit_counter / num_addr;
+	double page_fault_rate = (double) page_fault_counter / num_addr;
 
 	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
 	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);
@@ -387,16 +384,9 @@ int ParseOffset(int logical_addr) {
  * Description:
  */
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
-	tlb_entry_t ** ent = (tlb_entry_t **) malloc(sizeof(tlb_entry_t *));
-	if (ent == NULL) {
-		return -1;
-	}
+	tlb_entry_t ** ent;
 	tlb_entry_t * del;
-	int result;
-	result = CreateEntry(page_num, frame_num, ent);
-	if (result) {
-		return result;
-	}
+	CreateEntry(page_num, frame_num, ent);
 
 	if (tlb->size == 0) {
 		tlb->head = (*ent);
@@ -463,9 +453,6 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
  */
 int CreateEntry(int page_num, int frame_num, tlb_entry_t **ent) {
 	(*ent) = (tlb_entry_t*) malloc(sizeof(tlb_entry_t));
-	if ((*ent) == NULL) {
-		return -1;
-	}
 	(*ent)->frame_num = frame_num;
 	(*ent)->page_num = page_num;
 	(*ent)->next = NULL;

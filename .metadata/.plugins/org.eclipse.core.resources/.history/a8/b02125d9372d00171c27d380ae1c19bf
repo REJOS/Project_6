@@ -165,8 +165,8 @@ int main() {
 		}
 	}
 
-	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
-	double page_fault_rate = ((double) page_fault_counter / num_addr) * 100.0;
+	double tlb_hit_rate = (double) tlb_hit_counter / num_addr;
+	double page_fault_rate = (double) page_fault_counter / num_addr;
 
 	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
 	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);

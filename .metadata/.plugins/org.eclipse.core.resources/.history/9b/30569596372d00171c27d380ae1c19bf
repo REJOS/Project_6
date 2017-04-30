@@ -165,8 +165,8 @@ int main() {
 		}
 	}
 
-	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
-	double page_fault_rate = ((double) page_fault_counter / num_addr) * 100.0;
+	double tlb_hit_rate = (double) tlb_hit_counter / num_addr;
+	double page_fault_rate = (double) page_fault_counter / num_addr;
 
 	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
 	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);
@@ -387,10 +387,7 @@ int ParseOffset(int logical_addr) {
  * Description:
  */
 int TLB_replacement_FIFO(int page_num, int frame_num, tlb_t *tlb) {
-	tlb_entry_t ** ent = (tlb_entry_t **) malloc(sizeof(tlb_entry_t *));
-	if (ent == NULL) {
-		return -1;
-	}
+	tlb_entry_t ** ent;
 	tlb_entry_t * del;
 	int result;
 	result = CreateEntry(page_num, frame_num, ent);
