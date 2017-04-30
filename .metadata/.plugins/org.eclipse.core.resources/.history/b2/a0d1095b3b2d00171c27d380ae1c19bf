@@ -151,6 +151,8 @@ int main() {
 			}
 			if (USE_FIFO) {
 				result = TLB_replacement_FIFO(page_num, *frame_num, *tlb);
+			} else {
+				result = TLB_replacement_LRU(page_num, *frame_num, *tlb);
 			}
 			if (result) {
 				printf("Error: could not update TLB");
@@ -159,9 +161,6 @@ int main() {
 		} else {
 			tlb_hit_counter++;
 		}
-		if (!USE_FIFO) {
-			TLB_replacement_LRU(page_num, *frame_num, *tlb);
-		}
 		physical_address = GetPhysicalAddress(*frame_num, offset);
 		GetByteFromFrame(physical_address, *physical_memory, byte);
 		printf("Virtual address: %d; ", logic_addr[i]);
@@ -169,9 +168,6 @@ int main() {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
-		if (logic_addr[i] == 48128) {
-			printf("here");
-		}
 	}
 
 	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
@@ -442,22 +438,18 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t * del;
 	if (tlb->size > 0) {
 		curr = tlb->head;
-		if (curr->page_num == page_num) {
-			del = curr;
-			tlb->head = curr->next;
-			tlb->size--;
-			free(del);
-		} else {
-			while (curr->next != NULL) {
-				if (curr->next->page_num == page_num) {
-					del = curr->next;
-					curr->next = curr->next->next;
-					tlb->size--;
-					free(del);
-					break;
-				}
-				curr = curr->next;
-
+		while (curr->next != NULL) {
+			if (curr->next->page_num == page_num
+					&& curr->next->frame_num == frame_num) {
+				del = curr->next;
+				free(del);
+				tlb->size--;
+			}
+			if (tlb->size > 2) {
+				curr->next = curr->next->next;
+			} else {
+				tlb->head = curr;
+				tlb->tail = curr;
 			}
 		}
 	}

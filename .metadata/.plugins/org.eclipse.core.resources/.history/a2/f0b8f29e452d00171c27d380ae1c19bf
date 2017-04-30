@@ -450,7 +450,7 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 		} else {
 			while (curr->next != NULL) {
 				if (curr->next->page_num == page_num) {
-					del = curr->next;
+					del = curr;
 					curr->next = curr->next->next;
 					tlb->size--;
 					free(del);

@@ -169,7 +169,7 @@ int main() {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
-		if (logic_addr[i] == 48128) {
+		if (*byte == 57) {
 			printf("here");
 		}
 	}
@@ -442,23 +442,21 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 	tlb_entry_t * del;
 	if (tlb->size > 0) {
 		curr = tlb->head;
-		if (curr->page_num == page_num) {
-			del = curr;
-			tlb->head = curr->next;
-			tlb->size--;
-			free(del);
-		} else {
-			while (curr->next != NULL) {
-				if (curr->next->page_num == page_num) {
-					del = curr->next;
+		while (curr->next != NULL) {
+			if (curr->next->page_num == page_num
+					&& curr->next->frame_num == frame_num) {
+				del = curr->next;
+				if (tlb->size > 2) {
 					curr->next = curr->next->next;
-					tlb->size--;
-					free(del);
-					break;
+				} else {
+					tlb->head = curr;
+					tlb->tail = curr;
 				}
-				curr = curr->next;
-
+				free(del);
+				tlb->size--;
 			}
+			curr = curr->next;
+
 		}
 	}
 

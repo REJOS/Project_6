@@ -169,7 +169,7 @@ int main() {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
-		if (logic_addr[i] == 48128) {
+		if (logic_addr[i] == 43121) {
 			printf("here");
 		}
 	}
