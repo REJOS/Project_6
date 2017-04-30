@@ -64,14 +64,6 @@ int main() {
 	num_addr = i; // Number of address
 	fclose(input); // Close the input file
 
-	printf("Welcome to Group 3's VM Simulator\n\n");
-	printf("Number of logical pages: %d\n", NUM_PAGES);
-	printf("Page size: %d bytes\n", PAGE_SIZE);
-	printf("Page table size: %d\n", NUM_PAGES);
-	printf("TLB size: %d entries\n", TLB_SIZE);
-	printf("Number of physical frames: %d\n", NUM_FRAMES);
-	printf("Physical memory size: %d bytes\n\n", PHYSICAL_MEMORY_SIZE);
-
 	do {
 		printf("Display Physical Addresses? [yes | no]: ");
 		scanf("%s", answer);
@@ -168,6 +160,9 @@ int main() {
 			printf("Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
+		if (*byte == 59) {
+			printf("here");
+		}
 	}
 
 	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
@@ -442,14 +437,14 @@ int TLB_replacement_LRU(int page_num, int frame_num, tlb_t *tlb) {
 			if (curr->next->page_num == page_num
 					&& curr->next->frame_num == frame_num) {
 				del = curr->next;
+				if (tlb->size > 2) {
+					curr->next = curr->next->next;
+				} else {
+					tlb->head = curr;
+					tlb->tail = curr;
+				}
 				free(del);
 				tlb->size--;
-			}
-			if (tlb->size > 2) {
-				curr->next = curr->next->next;
-			} else {
-				tlb->head = curr;
-				tlb->tail = curr;
 			}
 		}
 	}

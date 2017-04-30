@@ -70,7 +70,7 @@ int main() {
 	printf("Page table size: %d\n", NUM_PAGES);
 	printf("TLB size: %d entries\n", TLB_SIZE);
 	printf("Number of physical frames: %d\n", NUM_FRAMES);
-	printf("Physical memory size: %d bytes\n\n", PHYSICAL_MEMORY_SIZE);
+	printf("Physical memory size: %d bytes\n", PHYSICAL_MEMORY_SIZE);
 
 	do {
 		printf("Display Physical Addresses? [yes | no]: ");
