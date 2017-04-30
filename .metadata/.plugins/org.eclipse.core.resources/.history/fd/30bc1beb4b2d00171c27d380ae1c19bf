@@ -19,6 +19,7 @@
 #define BUFFER_SIZE 256
 #define MAX_ADDRESSES 10000
 
+const char * IN_FILE = "InputFile.txt";
 const char * OUT_FILE = "vm_sim_output.txt";
 const char * DISK_FILE = "BACKING_STORE";
 
@@ -28,13 +29,8 @@ const char * DISK_FILE = "BACKING_STORE";
  * Return Type: int
  * Description:
  */
-int main(int argc, char * argv[]) {
+int main() {
 
-	if (argc != 2) {
-		printf("Error: invalid number of arguments");
-	}
-
-	char * in_file = argv[1];
 	const char *delimiters = ", \n\r";
 	char buffer[BUFFER_SIZE];
 	char *last_addr;
@@ -46,11 +42,11 @@ int main(int argc, char * argv[]) {
 	bool use_fifo;
 	bool show_physical_address;
 	FILE * input;
-	input = fopen(in_file, "r");
+	input = fopen(IN_FILE, "r");
 
 	// File is invalid
 	if (input == NULL) {
-		printf("Error: could not read %s", in_file);
+		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
 
@@ -134,18 +130,18 @@ int main(int argc, char * argv[]) {
 	}
 
 	int * frame_num = (int *) malloc(sizeof(int));
-	unsigned char * byte = (unsigned char *) malloc(sizeof(unsigned char));
+	int * byte = (int *) malloc(sizeof(int));
 	bool * hit = (bool *) malloc(sizeof(bool));
 	int physical_address;
 	int tlb_hit_counter = 0;
 	int page_fault_counter = 0;
 	FILE * output;
 
-	output = fopen(OUT_FILE, "w");
+	output = fopen(OUT_FILE, "");
 
 	// File is invalid
 	if (output == NULL) {
-		printf("Error: could not read %s", in_file);
+		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
 
@@ -179,22 +175,17 @@ int main(int argc, char * argv[]) {
 		physical_address = GetPhysicalAddress(*frame_num, offset);
 		GetByteFromFrame(physical_address, *physical_memory, byte);
 		printf("Virtual address: %d; ", logic_addr[i]);
-		fprintf(output, "Virtual address: %d; ", logic_addr[i]);
 		if (show_physical_address) {
 			printf("Physical address: %d; ", physical_address);
-			fprintf(output, "Physical address: %d; ", physical_address);
 		}
 		printf("Value: %d\n", *byte);
-		fprintf(output, "Value: %d\n", *byte);
 	}
 
 	double tlb_hit_rate = ((double) tlb_hit_counter / num_addr) * 100.0;
 	double page_fault_rate = ((double) page_fault_counter / num_addr) * 100.0;
 
 	printf("Page fault rate: %3.2f%%\n", page_fault_rate);
-	fprintf(output, "Page fault rate: %3.2f%%\n", page_fault_rate);
 	printf("TLB hit rate: %3.2f%%\n", tlb_hit_rate);
-	fprintf(output, "TLB hit rate: %3.2f%%\n", tlb_hit_rate);
 
 	fclose(output);
 
@@ -238,7 +229,7 @@ int GetPhysicalAddress(int frame_num, int offset) {
 }
 
 int GetByteFromFrame(int physical_address, physical_memory_t *physical_memory,
-		unsigned char *byte) {
+		int *byte) {
 	*byte = *(physical_memory->frame[ParsePageOrFrameNum(physical_address)]
 			+ ParseOffset(physical_address));
 	return 0;

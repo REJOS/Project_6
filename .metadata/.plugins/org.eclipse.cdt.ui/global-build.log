@@ -3075,3 +3075,50 @@ make: *** [memorysystem.o] Error 1
 make all 
 g++ -c -g memorysystem.cpp
 g++ -g -o Debug/MemorySystem memorysystem.o
+21:25:22 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:31:46 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:33:14 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:37:58 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main(int, char**)’:
+memorysystem.cpp:53:38: error: ‘IN_FILE’ was not declared in this scope
+   printf("Error: could not read %s", IN_FILE);
+                                      ^
+memorysystem.cpp:148:38: error: ‘IN_FILE’ was not declared in this scope
+   printf("Error: could not read %s", IN_FILE);
+                                      ^
+make: *** [memorysystem.o] Error 1
+21:38:30 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o
+21:39:43 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main(int, char**)’:
+memorysystem.cpp:180:60: error: cannot convert ‘int*’ to ‘unsigned char*’ for argument ‘3’ to ‘int GetByteFromFrame(int, physical_memory_t*, unsigned char*)’
+   GetByteFromFrame(physical_address, *physical_memory, byte);
+                                                            ^
+make: *** [memorysystem.o] Error 1
+21:40:16 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+memorysystem.cpp: In function ‘int main(int, char**)’:
+memorysystem.cpp:137:51: error: cannot convert ‘int*’ to ‘unsigned char*’ in initialization
+  unsigned char * byte = (int *) malloc(sizeof(int));
+                                                   ^
+make: *** [memorysystem.o] Error 1
+21:40:34 **** Incremental Build of configuration Default for project MemorySystem ****
+make all 
+g++ -c -g memorysystem.cpp
+g++ -g -o Debug/MemorySystem memorysystem.o

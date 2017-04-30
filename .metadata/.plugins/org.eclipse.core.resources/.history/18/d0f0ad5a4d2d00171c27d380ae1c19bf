@@ -19,6 +19,7 @@
 #define BUFFER_SIZE 256
 #define MAX_ADDRESSES 10000
 
+const char * IN_FILE = "InputFile.txt";
 const char * OUT_FILE = "vm_sim_output.txt";
 const char * DISK_FILE = "BACKING_STORE";
 
@@ -28,13 +29,10 @@ const char * DISK_FILE = "BACKING_STORE";
  * Return Type: int
  * Description:
  */
-int main(int argc, char * argv[]) {
+int main(int argc, char** argv) {
 
-	if (argc != 2) {
-		printf("Error: invalid number of arguments");
-	}
+	printf("%s", *argv);
 
-	char * in_file = argv[1];
 	const char *delimiters = ", \n\r";
 	char buffer[BUFFER_SIZE];
 	char *last_addr;
@@ -46,11 +44,11 @@ int main(int argc, char * argv[]) {
 	bool use_fifo;
 	bool show_physical_address;
 	FILE * input;
-	input = fopen(in_file, "r");
+	input = fopen(IN_FILE, "r");
 
 	// File is invalid
 	if (input == NULL) {
-		printf("Error: could not read %s", in_file);
+		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
 
@@ -134,7 +132,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	int * frame_num = (int *) malloc(sizeof(int));
-	unsigned char * byte = (unsigned char *) malloc(sizeof(unsigned char));
+	int * byte = (int *) malloc(sizeof(int));
 	bool * hit = (bool *) malloc(sizeof(bool));
 	int physical_address;
 	int tlb_hit_counter = 0;
@@ -145,7 +143,7 @@ int main(int argc, char * argv[]) {
 
 	// File is invalid
 	if (output == NULL) {
-		printf("Error: could not read %s", in_file);
+		printf("Error: could not read %s", IN_FILE);
 		return -1;
 	}
 
@@ -238,7 +236,7 @@ int GetPhysicalAddress(int frame_num, int offset) {
 }
 
 int GetByteFromFrame(int physical_address, physical_memory_t *physical_memory,
-		unsigned char *byte) {
+		int *byte) {
 	*byte = *(physical_memory->frame[ParsePageOrFrameNum(physical_address)]
 			+ ParseOffset(physical_address));
 	return 0;

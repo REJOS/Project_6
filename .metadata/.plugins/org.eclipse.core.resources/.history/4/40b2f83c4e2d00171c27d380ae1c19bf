@@ -134,7 +134,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	int * frame_num = (int *) malloc(sizeof(int));
-	unsigned char * byte = (unsigned char *) malloc(sizeof(unsigned char));
+	int * byte = (int *) malloc(sizeof(int));
 	bool * hit = (bool *) malloc(sizeof(bool));
 	int physical_address;
 	int tlb_hit_counter = 0;
@@ -238,7 +238,7 @@ int GetPhysicalAddress(int frame_num, int offset) {
 }
 
 int GetByteFromFrame(int physical_address, physical_memory_t *physical_memory,
-		unsigned char *byte) {
+		int *byte) {
 	*byte = *(physical_memory->frame[ParsePageOrFrameNum(physical_address)]
 			+ ParseOffset(physical_address));
 	return 0;

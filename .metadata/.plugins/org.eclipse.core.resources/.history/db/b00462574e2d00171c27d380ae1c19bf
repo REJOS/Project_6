@@ -134,7 +134,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	int * frame_num = (int *) malloc(sizeof(int));
-	unsigned char * byte = (unsigned char *) malloc(sizeof(unsigned char));
+	int * byte = (int *) malloc(sizeof(int));
 	bool * hit = (bool *) malloc(sizeof(bool));
 	int physical_address;
 	int tlb_hit_counter = 0;
